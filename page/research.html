@@ -1,0 +1,420 @@
+<html>
+<head>
+	<title>科研工具集</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<base target="_blank"> <!-- <base target="_blank">  设置全局 a 链接打开新的空白页面_blank或原页面_self -->
+	<link rel="shortcut icon" href="../res/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+            var _hmt = _hmt || [];
+            (function() {
+                 var hm = document.createElement("script");
+                 hm.src = "https://hm.baidu.com/hm.js?0c80cab2342e18b39d22c77289abc5f7";
+                 var s = document.getElementsByTagName("script")[0]; 
+                 s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+	<style>
+		h2, h4, p {
+			text-align: center;
+		}
+		
+		body {
+			background-image:url(../res/img/background.jpg);
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+		
+		td {
+			border: 1px solid transparent !important;
+		}
+		
+		.icos {
+			width: 32px;;
+		}
+		
+		.col-md-4 {
+			margin-top: 3%;
+		}
+		
+		.card {
+			background-color: #ffffffa8;
+		}
+		.nav-link {
+			color: black;
+		}
+		
+		.site-footer {
+			position: relative;
+			border-top: 30px;
+		}
+	</style>
+	<script>
+		 var  generateHideElement = function (name, value) {
+		 	var tempInput = document.getElementById("type_str");
+		 	if(tempInput)
+		 	{
+		 		tempInput.name = name;
+		 		tempInput.value = value;
+		 	} else{
+		 		var tempInput = document.createElement("input");
+                tempInput.type = "hidden";
+                tempInput.id = "type_str";
+                tempInput.name = name;
+                tempInput.value = value;
+                return tempInput;
+		 	}
+        }
+		function Searchtype(){
+			var type=document.getElementById("searchtype").options[document.getElementById("searchtype").selectedIndex].value;
+			if (type=="baidu"){
+				document.getElementById("searchweb").action="https://www.baidu.com/s";
+				document.getElementById("s_str").name="wd"
+			} else if (type=="bing"){
+				document.getElementById("searchweb").action="https://cn.bing.com/search";
+				document.getElementById("s_str").name="q"
+			} else if (type=="google"){
+				document.getElementById("searchweb").action="https://www.google.com/search";
+				document.getElementById("s_str").name="q"
+			} else if (type=="github"){
+				document.getElementById("searchweb").action="https://github.com/search";
+				document.getElementById("s_str").name="q"
+			} else if (type=="weixin"){
+				document.getElementById("searchweb").action="https://weixin.sogou.com/weixin";
+				document.getElementById("s_str").name="query"
+                var tempInput = generateHideElement("type", 2)
+                document.getElementById("searchweb").appendChild(tempInput);
+			} else if (type=="zhihu"){
+				document.getElementById("searchweb").action="https://www.zhihu.com/search";
+				document.getElementById("s_str").name="q"
+				var tempInput = generateHideElement("type", "content")
+                document.getElementById("searchweb").appendChild(tempInput);
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark">
+		<a class="navbar-brand" href="#">科研常用工具</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="../index.html"> 常用工具集 </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="software_list.html"> 软件推荐 </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="https://open985.com/"> 极客搜索 </a>
+			</li>
+		</ul>
+		</div>  
+	</nav>
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<form id="searchweb" action="https://cn.bing.com/search" target="_blank">
+					<div class="input-group input-group-lg">
+						<div class="input-group-prepend">
+							<select id="searchtype" class="input-group-text" style="font-size:medium" onchange="Searchtype();">
+								<option value="baidu">百度</option>
+								<option value="bing" selected>必应</option>
+								<option value="google">谷歌</option>
+								<option value="github">github</option>
+								<option value="weixin">微信</option>
+								<option value="zhihu">知乎</option>
+							</select>
+						</div>
+						<input type="text" class="form-control" name="q" id="s_str" maxlength="100" autocomplete="off">
+						<div class="input-group-append">
+							<button class="btn btn-primary" style="font-size:medium" type="submit">搜索</button>  
+						</div>
+					</div>
+				</form>
+			</div>
+			<br>
+			
+			<div class="col-md-12">
+			</div>
+			<br>
+			<br>
+			
+			<div class="col-md-4">
+				<h4 class="card-title">论文检索与管理</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="../res/img/google.jpg">
+										<a href="https://scholar.google.com" class="card-link">谷歌学术</a>
+									</td>
+									<td>
+										<!-- <img class="icos" src="../res/img/favicon.ico">
+										<a href="http://sci.xueshuwu.cn/" class="card-link">谷歌学术镜像</a> -->
+										<img class="icos" src="https://ac.scmor.com/res/favicon.ico">
+										<a href="https://ac.scmor.com/" class="card-link">谷歌学术镜像</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://academic.microsoft.com/favicon-32x32.png">
+										<a href="https://academic.microsoft.com/home" class="card-link">微软学术</a>
+									</td>
+									<td>
+										<img class="icos" src="../res/img/apple-touch-icon-114x114.png">
+										<a href="https://www.semanticscholar.org/" class="card-link">semanticscholar</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="../res/img/arxiv_favicon.ico">
+										<a href="https://arxiv.org/" class="card-link">arxiv</a>
+									</td>
+									<td>
+										<img class="icos" src="https://ieeexplore.ieee.org/assets/img/ieee_logo.png">
+										<a href="https://ieeexplore.ieee.org/Xplore/home.jsp" class="card-link">IEEE</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/24/images/elsevier-non-solus-new-grey.svg">
+										<a href="https://www.sciencedirect.com/" class="card-link">Elsevier</a>
+									</td>
+									<td>
+										<img class="icos" src="https://dblp.uni-trier.de/img/dblp.icon.192x192.png">
+										<a href="https://dblp.uni-trier.de/search/" class="card-link">DBLP</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://cms-cdn.mendeley.com/prod/images/logo-full.svg">
+										<a href="https://www.mendeley.com/" class="card-link">Mendeley</a>
+									</td>
+									<td>
+										<img class="icos" src="../res/img/scholar_logo.png">
+										<a href="https://xueshu.baidu.com/" class="card-link">百度学术</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://dict.cnki.net/favicon.ico">
+										<a href="https://www.cnki.net/" class="card-link">中国知网</a>
+									</td>
+									<td>
+										<img class="icos" src="../res/img/wanfang_favicon.ico">
+										<a href="https://www.wanfangdata.com.cn/index.html" class="card-link">万方数据</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.medsci.cn/v1.0.0/img/logo.png">
+										<a href="https://www.medsci.cn/" class="card-link">MedSCI</a>
+									</td>
+									<td>
+										<img class="icos" src="https://cdn.ncbi.nlm.nih.gov/coreutils/nwds/img/favicons/favicon.ico">
+										<a href="https://pubmed.ncbi.nlm.nih.gov/" class="card-link">pubmed</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="../res/img/crv_logo_rgb_pos.svg">
+										<a href="https://www.webofscience.com/wos" class="card-link">SCI</a>
+									</td>
+									<td>
+										<img class="icos" src="https://sci-hub.se/misc/img/logo_en.png">
+										<a href="https://sci-hub.se/" class="card-link">SCI-hub</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4 class="card-title">论文翻译与写作</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="https://static.grammarly.com/assets/files/3a89d404f9db7ffd42e5fa9b8cd7d93e/grammarly_logo.svg">
+										<a href="https://www.grammarly.com/" class="card-link">Grammarly</a>
+									</td>
+									<td>
+										<img class="icos" src="https://cdn.overleaf.com/img/ol-brand/overleaf.svg">
+										<a href="https://www.overleaf.com/?r=abc72239&rm=d&rs=b" class="card-link">Overleaf</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="../res/img/UTjFYEzMSYVwzxIGVhMu.png" >
+										<a href="https://www.yuque.com/dashboard" class="card-link">语雀</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.processon.com/favicon.ico">
+										<a href="https://www.processon.com/" class="card-link">ProcessOn</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://webdemo.myscript.com/views/math/img/WebDemoIcon-Math-Black.3731d73e.svg" >
+										<a href="https://webdemo.myscript.com/views/math/index.html" class="card-link">在线latex公式</a>
+									</td>
+									<td>
+										<img class="icos" src="../res/img/table_logo.png">
+										<a href="https://www.tablesgenerator.com/" class="card-link">在线latex表格</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="../res/img/transmart.png">
+										<a href="https://transmart.qq.com/index" class="card-link">辅助翻译</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.onlinedoctranslator.com/resources/img/logo-icons.svg">
+										<a href="https://www.onlinedoctranslator.com/zh-CN/" class="card-link">文档翻译</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://translate.google.cn/favicon.ico">
+										<a href="https://translate.google.cn/" class="card-link">谷歌翻译</a>
+									</td>
+									<td>
+										<img class="icos" src="https://fanyi-cdn.cdn.bcebos.com/static/translation/img/favicon/favicon-32x32_ca689c3.png">
+										<a href="https://fanyi.baidu.com/" class="card-link">百度翻译</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.aje.cn/dist/img/aje-icon.svg">
+										<a href="https://www.aje.cn/" class="card-link">AJE润色</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.turnitincn.com/statics/images/main_img/logo.png">
+										<a href="https://www.turnitincn.com/" class="card-link"> turnitincn </a>
+									</td>
+									<td>
+										<img class="icos" src="../res/img/chaessay.jpg">
+										<a href="http://www.chaessay.com/" class="card-link">论文查重</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4 class="card-title">资源</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.ccf.org.cn/images/images/logo.png">
+										<a href="https://www.ccf.org.cn/Academic_Evaluation/By_category/" class="card-link">CCF推荐</a>
+									</td>
+									<td>
+										<img class="icos" src="../res/img/code15.jpg">
+										<a href="http://www.fenqubiao.com/" class="card-link">中科院分区</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.myhuiban.com/themes/abound/img/icons/favicon.ico">
+										<a href="https://www.myhuiban.com/home" class="card-link">会伴</a>
+									</td>
+									<td>
+										<img class="icos" src="https://aideadlin.es/static/img/favicon.png">
+										<a href="https://aideadlin.es/?sub=ML,CV,NLP,RO,SP,DM" class="card-link">AIDeadlines</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="../res/img/university-1.png">
+										<a href="http://www.phrasebank.manchester.ac.uk/" class="card-link">论文短语库</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.english-corpora.org/favicon.ico">
+										<a href="https://www.english-corpora.org/" class="card-link">英语语料库</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://linggle.com/static/img/favicon.png">
+										<a href="https://linggle.com/" class="card-link">linggle短语匹配</a>
+									</td>
+									<td>
+										<img class="icos" src="../res/img/netspeak.png">
+										<a href="https://netspeak.org/" class="card-link">netspeak短语匹配</a>
+									</td>
+								</tr>
+								<tr>	
+									<td>
+										<img class="icos" src="../res/img/latex.png">
+										<a href="http://www.latextemplates.com/cat/academic-journals" class="card-link">论文模板</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.termonline.cn/static/img/logo2.91383cf6.svg">
+										<a href="https://www.termonline.cn/index" class="card-link">术语在线</a>
+									</td>
+								</tr>
+								<tr>	
+									<td>
+										<img class="icos" src="https://nbviewer.jupyter.org/static/img/nav_logo.svg">
+										<a href="https://nbviewer.jupyter.org/" class="card-link">jupyter查看</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.kaggle.com/static/images/site-logo.png">
+										<a href="https://www.kaggle.com/" class="card-link">kaggle</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.cn-ki.net/static/idata_logo.png">
+										<a href="https://www.cn-ki.net/" class="card-link">知网免费下载</a>
+									</td>
+									<td>
+										<img class="icos" src="res/favicon.ico">
+										<a href="https://github.com/joeat1/NLP_resource" class="card-link">NLP汇总</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+	
+	<br>
+	<footer class="site-footer"> 
+		<div class="container"> 
+			<div class="row footer-top"> 
+				<div class="footer-about col-sm-12" style="color:#ffffff;"> 
+					<p>此处仅提供了部分网站链接，欢迎start或fork<a href="https://github.com/joeat1/tools" >本Github项目</a>，也欢迎留言推荐较好的网站。</p>
+					<p>请在遵守法律的前提下使用，本页面不负任何责任！</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<html>
+<head>
+	<title>常用工具集</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<base target="_blank"> <!-- <base target="_blank">  设置全局 a 链接打开新的空白页面_blank或原页面_self -->
+	<link rel="shortcut icon" href="../res/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?0c80cab2342e18b39d22c77289abc5f7";
+				var s = document.getElementsByTagName("script")[0]; 
+				s.parentNode.insertBefore(hm, s);
+		})();
+    </script>
+	<style>
+		h2, h4, p {
+			text-align: center;
+		}
+		
+		body {
+			background-image:url(../res/img/background.jpg);
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+		
+		td {
+			border: 1px solid transparent !important;
+		}
+		
+		.icos {
+			width: 32px;;
+		}
+		
+		.col-md-4 {
+			margin-top: 3%;
+		}
+		
+		.card {
+			background-color: #ffffffa8;
+		}
+		.nav-link {
+			color: black;
+		}
+		
+		.site-footer {
+			position: relative;
+			border-top: 30px;
+		}
+	</style>
+	<script>
+		 var  generateHideElement = function (name, value) {
+		 	var tempInput = document.getElementById("type_str");
+		 	if(tempInput)
+		 	{
+		 		tempInput.name = name;
+		 		tempInput.value = value;
+		 	} else{
+		 		var tempInput = document.createElement("input");
+                tempInput.type = "hidden";
+                tempInput.id = "type_str";
+                tempInput.name = name;
+                tempInput.value = value;
+                return tempInput;
+		 	}
+        }
+		function Searchtype(){
+			var type=document.getElementById("searchtype").options[document.getElementById("searchtype").selectedIndex].value;
+			if (type=="baidu"){
+				document.getElementById("searchweb").action="https://www.baidu.com/s";
+				document.getElementById("s_str").name="wd"
+			} else if (type=="bing"){
+				document.getElementById("searchweb").action="https://cn.bing.com/search";
+				document.getElementById("s_str").name="q"
+			} else if (type=="google"){
+				document.getElementById("searchweb").action="https://www.google.com/search";
+				document.getElementById("s_str").name="q"
+			} else if (type=="github"){
+				document.getElementById("searchweb").action="https://github.com/search";
+				document.getElementById("s_str").name="q"
+			} else if (type=="weixin"){
+				document.getElementById("searchweb").action="https://weixin.sogou.com/weixin";
+				document.getElementById("s_str").name="query"
+                var tempInput = generateHideElement("type", 2)
+                document.getElementById("searchweb").appendChild(tempInput);
+			} else if (type=="zhihu"){
+				document.getElementById("searchweb").action="https://www.zhihu.com/search";
+				document.getElementById("s_str").name="q"
+				var tempInput = generateHideElement("type", "content")
+                document.getElementById("searchweb").appendChild(tempInput);
+			} else if (type=="ip"){
+				document.getElementById("searchweb").action="https://www.atool99.com/host.php";
+				document.getElementById("s_str").name="q"
+			}
+		}
+	</script>
+	<script>
+		$(function () { $("[data-toggle='tooltip']").tooltip(); });
+	</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark">
+		<a class="navbar-brand" href="#">常用工具</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="../page/software_list.html"> 软件推荐 </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../page/TVchannel.html"> 电视直播 </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../index.html"> 常用工具集 </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../page/research.html"> 科研工具集 </a>
+			</li>
+		</ul>
+		</div>  
+	</nav>
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<form id="searchweb" action="https://www.baidu.com/s" target="_blank">
+					<div class="input-group input-group-lg">
+						<div class="input-group-prepend">
+							<select id="searchtype" class="input-group-text" style="font-size:medium" onchange="Searchtype();">
+								<option value="baidu" selected>百度</option>
+								<option value="bing">必应</option>
+								<option value="google">谷歌</option>
+								<option value="github">github</option>
+								<option value="weixin">微信</option>
+								<option value="zhihu">知乎</option>
+								<option value="ip">IP查询</option>
+							</select>
+						</div>
+						<input type="text" class="form-control" name="wd" id="s_str" maxlength="100" autocomplete="off">
+						<div class="input-group-append">
+							<button class="btn btn-primary" style="font-size:medium" type="submit">搜索</button>  
+						</div>
+					</div>
+				</form>
+			</div>
+			<br>
+			
+			<div class="col-md-12">
+			</div>
+			<br>
+			<br>
+			
+			<div class="col-md-4">
+				<h4 class="card-title">在线游戏</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="../res/favicon.ico">
+										<a href="BBTan-Online.html" class="card-link" >BBTan-Online</a>
+									</td>
+									<td>
+										<img class="icos" src="../res/favicon.ico">
+										<a href="daxigua/index.html" class="card-link" >大西瓜</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="../res/favicon.ico">
+										<a href="shudu/index.html" class="card-link">数独</a>
+									</td>
+									<td>
+										<img class="icos" src="../res/favicon.ico">
+										<a href="2048/index.html" class="card-link" >2048</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4 class="card-title">待完成</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4 class="card-title">待完成</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+	
+	<br>
+	<footer class="site-footer"> 
+		<div class="container"> 
+			<div class="row footer-top"> 
+				<div class="footer-about col-sm-12" style="color:#ffffff;"> 
+					<p>此处仅提供了部分网站链接，欢迎start或fork<a href="https://github.com/joeat1/tools" >本Github项目</a>，也欢迎留言推荐较好的网站。</p>
+					<p>请在遵守法律的前提下使用，本页面不负任何责任！</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>二维码生成</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../res/css/bootstrap.min.css">
+    <script type="text/javascript" src="../res/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../res/js/qrcode.min.js"></script>
+    <style>
+		h2, h4, p {
+			text-align: center;
+		}
+		
+		body {
+			background-image:url(../res/img/background.jpg);
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark">
+		<a class="navbar-brand" href="#">小工具</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="../index.html"> 常用工具集 </a>
+			</li>
+            <li class="nav-item">
+				<a class="nav-link" href="research.html"> 科研工具集 </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="software_list.html"> 软件推荐 </a>
+			</li>
+		</ul>
+		</div>  
+	</nav>
+	<br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <input type="text" class="form-control" value="joeat1" id="qr_text" maxlength="100" autocomplete="off">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" style="font-size:medium" onclick="makeCode()">生成</button>  
+                </div>
+                <div id="qrcode" style="margin-top:15px;"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : 100,
+            height : 100
+        });
+
+        function makeCode () {		
+            var elText = document.getElementById("qr_text");
+            
+            if (!elText.value) {
+                alert("请输入文字");
+                elText.focus();
+                return;
+            }
+            
+            qrcode.makeCode(elText.value);
+        }
+
+        makeCode();
+
+        $("#qr_text").
+            on("blur", function () { //离开输入框
+                makeCode();
+            }).
+            on("keydown", function (e) {
+                if (e.keyCode == 13) {
+                    makeCode();
+                }
+            });
+    </script>
+</body>
+</html>

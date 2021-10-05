@@ -1,0 +1,54 @@
+.sd {
+    table-layout: fixed;
+    border: #443 3px solid;
+    width: 355px;
+    height: 355px;
+    background-color: #fff;
+    vertical-align: middle;
+    border-collapse: collapse;
+    text-align: center;
+}
+.big {
+    FONT-SIZE: 25px;
+    border: none;
+    background-color: transparent;
+    WIDTH: 30px;
+    HEIGHT: 30px;
+    LINE-HEIGHT: 28px;
+    TEXT-ALIGN: center;
+    margin: 0px;
+    COLOR: #0000FF;
+    FONT-FAMILY: Verdana;
+}
+td.xx {
+    border-right: #999 1px solid;
+    border-top: #999 1px solid;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    LINE-height: 30px;
+}
+td.rr {
+    border-right: #443 2px solid;
+    border-top: #999 1px solid;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    LINE-height: 30px;
+}
+td.top {
+    border-right: #999 1px solid;
+    border-top: #443 2px solid;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    LINE-height: 30px;
+}
+td.topr {
+	border-right: #443 2px solid;
+    border-top: #443 2px solid;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    LINE-height: 30px;
+}

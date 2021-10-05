@@ -1,0 +1,430 @@
+<html>
+<head>
+	<title>常用工具集</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<base target="_blank"> <!-- <base target="_blank">  设置全局 a 链接打开新的空白页面_blank或原页面_self -->
+	<link rel="shortcut icon" href="res/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?0c80cab2342e18b39d22c77289abc5f7";
+				var s = document.getElementsByTagName("script")[0]; 
+				s.parentNode.insertBefore(hm, s);
+		})();
+    </script>
+	<style>
+		h2, h4, p {
+			text-align: center;
+		}
+		
+		body {
+			background-image:url(res/img/background.jpg);
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-attachment:fixed
+		}
+		
+		td {
+			border: 1px solid transparent !important;
+		}
+		
+		.icos {
+			width: 32px;;
+		}
+		
+		.col-md-4 {
+			margin-top: 3%;
+		}
+		
+		.card {
+			background-color: #ffffffa8;
+		}
+		.nav-link {
+			color: black;
+		}
+		
+		.site-footer {
+			position: relative;
+			border-top: 30px;
+		}
+	</style>
+	<script>
+		 var  generateHideElement = function (name, value) {
+		 	var tempInput = document.getElementById("type_str");
+		 	if(tempInput)
+		 	{
+		 		tempInput.name = name;
+		 		tempInput.value = value;
+		 	} else{
+		 		var tempInput = document.createElement("input");
+                tempInput.type = "hidden";
+                tempInput.id = "type_str";
+                tempInput.name = name;
+                tempInput.value = value;
+                return tempInput;
+		 	}
+        }
+		function Searchtype(){
+			var type=document.getElementById("searchtype").options[document.getElementById("searchtype").selectedIndex].value;
+			if (type=="baidu"){
+				document.getElementById("searchweb").action="https://www.baidu.com/s";
+				document.getElementById("s_str").name="wd"
+			} else if (type=="bing"){
+				document.getElementById("searchweb").action="https://cn.bing.com/search";
+				document.getElementById("s_str").name="q"
+			} else if (type=="google"){
+				document.getElementById("searchweb").action="https://www.google.com/search";
+				document.getElementById("s_str").name="q"
+			} else if (type=="github"){
+				document.getElementById("searchweb").action="https://github.com/search";
+				document.getElementById("s_str").name="q"
+			} else if (type=="weixin"){
+				document.getElementById("searchweb").action="https://weixin.sogou.com/weixin";
+				document.getElementById("s_str").name="query"
+                var tempInput = generateHideElement("type", 2)
+                document.getElementById("searchweb").appendChild(tempInput);
+			} else if (type=="zhihu"){
+				document.getElementById("searchweb").action="https://www.zhihu.com/search";
+				document.getElementById("s_str").name="q"
+				var tempInput = generateHideElement("type", "content")
+                document.getElementById("searchweb").appendChild(tempInput);
+			} else if (type=="ip"){
+				document.getElementById("searchweb").action="https://www.atool99.com/host.php";
+				document.getElementById("s_str").name="q"
+			}
+		}
+	</script>
+	<script>
+		$(function () { $("[data-toggle='tooltip']").tooltip(); });
+	</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark">
+		<a class="navbar-brand" href="#">常用工具</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="page/software_list.html"> 软件推荐 </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="page/TVchannel.html"> 电视直播 </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="games/BBTan-Online.html"> BBTan-Online </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="https://open985.com/"> 极客搜索 </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="page/research.html"> 测试 </a>
+			</li>
+		</ul>
+		</div>  
+	</nav>
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<form id="searchweb" action="https://www.baidu.com/s" target="_blank">
+					<div class="input-group input-group-lg">
+						<div class="input-group-prepend">
+							<select id="searchtype" class="input-group-text" style="font-size:medium" onchange="Searchtype();">
+								<option value="baidu" selected>百度</option>
+								<option value="bing">必应</option>
+								<option value="google">谷歌</option>
+								<option value="github">github</option>
+								<option value="weixin">微信</option>
+								<option value="zhihu">知乎</option>
+								<option value="ip">IP查询</option>
+							</select>
+						</div>
+						<input type="text" class="form-control" name="wd" id="s_str" maxlength="100" autocomplete="off">
+						<div class="input-group-append">
+							<button class="btn btn-primary" style="font-size:medium" type="submit">搜索</button>  
+						</div>
+					</div>
+				</form>
+			</div>
+			<br>
+			
+			<div class="col-md-12">
+			</div>
+			<br>
+			<br>
+			
+			<div class="col-md-4">
+				<h4 class="card-title">在线工具</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.yinsiduanxin.com/static/sms/images/logo.png">
+										<a href="https://www.yinsiduanxin.com/" class="card-link" data-toggle="tooltip" data-placement="top"
+										 title="手机号注册不重要的网站时保护个人隐私">临时手机号</a>
+									</td>
+									<td>
+										<img class="icos" src="res/favicon.ico">
+										<a href="http://24mail.chacuo.net/" class="card-link"  data-toggle="tooltip" data-placement="top"
+										title="邮箱注册不重要的网站时保护个人隐私">临时邮箱</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://stx1.ideone.com/gfx2/img/favicon.png">
+										<a href="http://ideone.com/" class="card-link">在线IDE</a>
+									</td>
+									<td>
+										<img class="icos" src="https://static.convertio.co/favicon.ico">
+										<a href="https://convertio.co/zh/" class="card-link" data-toggle="tooltip" data-placement="top" title="支持超过 300 种不同的文件格式间的转换" >格式转换</a>
+									</td>
+									<!-- https://cn.office-converter.com/   https://cn.office-converter.com/svg/Office-Converter.svg -->
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://static.clideo.com/favicon.ico">
+										<a href="https://clideo.com/" class="card-link"> 在线视频工具 </a>
+									</td>
+									<td>
+										<img class="icos" src="https://static.clewm.net/static/images/favicon.ico">
+										<a href="https://cli.im/" class="card-link"> 二维码工具 </a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="res/img/logo.png">
+										<a href="http://www.ocrmaker.com/" class="card-link"> 图片转文字 </a>
+									</td>
+									<td>
+										<img class="icos" src="https://tools.pdf24.org/static/img/pdf24.png?v=5cf19973">
+										<a href="https://tools.pdf24.org/zh/" class="card-link"> PDF工具 </a>
+										<!-- https://smallpdf.com/ -->
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://translate.google.cn/favicon.ico">
+										<a href="https://translate.google.cn/" class="card-link">谷歌翻译</a>
+									</td>
+									<td>
+										<img class="icos" src="https://f.109876543210.com/logo_zhcn.png">
+										<a href="https://zhcn.109876543210.com/" class="card-link">图片转文字</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://cdn.tianyancha.com/web-require-js/public/images/nav-box-pro-2.png">
+										<a href="https://www.tianyancha.com/" class="card-link">天眼查</a>
+									</td>
+									<td>
+										<img class="icos" src="https://mms-graph.cdn.bcebos.com/pc/logo_w.png">
+										<a href="http://image.baidu.com/?fr=shitu" class="card-link">百度识图</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.processon.com/favicon.ico">
+										<a href="https://www.processon.com/" class="card-link">ProcessOn</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.fakenamegenerator.com/apple-touch-icon-57x57.png">
+										<a href="https://www.fakenamegenerator.com/" class="card-link"> Fakename </a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.cn-ki.net/static/idata_logo.png">
+										<a href="https://www.cn-ki.net/" class="card-link">iData</a>
+									</td>
+									<td>
+										<img class="icos" src="https://background.cowtransfer.com/version/1610989109001/image/cow.3011c44.png">
+										<a href="https://cowtransfer.com/" class="card-link">奶牛快传</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4 class="card-title">休闲娱乐</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.mgtv.com/favicon.ico">
+										<a href="https://www.mgtv.com/" class="card-link">芒果TV</a>
+									</td>
+									<td>
+										<img class="icos" src="res/img/622017dd4b0140432962d3ce0c6db99d77d2e937.png">
+										<a href="https://www.bilibili.com/" class="card-link">哔哩哔哩</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://pa.tedcdn.com/favicon.ico">
+										<a href="https://www.ted.com/"  class="card-link">TED</a>
+									</td>
+									<td>
+										<img class="icos" src="res/img/oeasy.png">
+										<a href="http://oeasy.org/" class="card-link">Oeasy视频</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="res/favicon.ico">
+										<a href="page/vip.html" class="card-link">VIP视频解析</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.douban.com/favicon.ico">
+										<a href="https://www.douban.com/" class="card-link">豆瓣</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://s1.music.126.net/style/favicon.ico">
+										<a href="https://music.163.com/" class="card-link">网易云</a>
+									</td>
+									<td>
+										<img class="icos" src="res/img/music_favicon.ico">
+										<a href="page/freemusic.html" class="card-link">免费音乐</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://file.ipadown.com/tophub/assets/images/favicon/favicon-32x32.png">
+										<a href="https://tophub.today/" class="card-link">今日热榜</a>
+									</td>
+									<td>
+										<img class="icos" src="https://m.rr.tv/_nuxt/img/27ed1c1.png">
+										<a href="https://m.rr.tv/" class="card-link">人人视频</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.aimeijutt.com/statics/img/logo_min_f.png">
+										<a href="https://www.aimeijutt.com/" class="card-link">美剧鸟</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.hanjutv2020.com/pc/images/favicon.ico">
+										<a href="https://www.hanjutv2020.com/" class="card-link">韩剧TV</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4 class="card-title">资源分享</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="https://ac.scmor.com/res/favicon.ico">
+										<a href="https://ac.scmor.com/" class="card-link">谷歌镜像</a>
+									</td>
+									<td>
+										<img class="icos" src="https://icon.zol-img.com.cn/favicon/180.png">
+										<a href="https://www.zol.com.cn/" class="card-link">中关村在线</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.pexels.com/favicon.ico">
+										<a href="https://www.pexels.com/zh-cn" class="card-link">图片视频素材</a>
+									</td>
+									<td>
+										<img class="icos" src="https://pixabay.com/favicon-32x32.png">
+										<a href="https://pixabay.com/zh/photos/" class="card-link">图片素材库</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://icon.qiantucdn.com/static/images/public/greenlogo.png">
+										<a href="https://www.58pic.com/" class="card-link">千图网</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.lanzou.com/favicon.ico">
+										<a href="https://www.lanzou.com/" class="card-link">蓝奏云</a>
+									</td>
+								</tr>
+								<!-- https://www.zdic.net/ https://www.zdic.net/images/home_logo.png 汉字字典 -->
+								<!-- https://visuwords.com/chirp 英语可视化词典 -->
+								<!-- https://www.examcoo.com/index/ku  https://img.examcoo.com/1458/themes/metro/images/v1_3e.jpg 考试题库-->
+								<tr>
+									<td>
+										<img class="icos" src="res/img/crx_chrome_favicon.ico">
+										<a href="https://chrome.zzzmh.cn/index" class="card-link">谷歌插件</a>
+									</td>
+									<td>
+										<img class="icos" src="res/img/greasyfork.png">
+										<a href="https://greasyfork.org/zh-CN/scripts" class="card-link">油猴脚本</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://p1.ssl.qhimg.com/t0182a1615ce3cbe312.png">
+										<a href="https://baoku.360.cn/soft/list/cid/0" class="card-link">软件下载</a>
+									</td>
+									<td>
+										<img class="icos" src="http://static.yingyonghui.com/resource/www/static/images/favicon.ico">
+										<a href="http://www.appchina.com/" class="card-link">应用汇</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="res/img/logoo.png">
+										<a href="http://www.ypppt.com/" class="card-link">PPT免费模板</a>
+									</td>
+									<td>
+										<img class="icos" src="res/img/logo3.png">
+										<a href="http://www.pptbz.com/" class="card-link">PPT免费模板</a>
+									</td>
+									
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="https://www.jiumodiary.com/images/favicon.png">
+										<a href="https://www.jiumodiary.com/" class="card-link">文档搜索</a>
+									</td>
+									
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+	
+	<br>
+	<footer class="site-footer"> 
+		<div class="container"> 
+			<div class="row footer-top"> 
+				<div class="footer-about col-sm-12" style="color:#ffffff;"> 
+					<p>此处仅提供了部分网站链接，欢迎start或fork<a href="https://github.com/joeat1/tools" >本Github项目</a>，也欢迎留言推荐较好的网站。</p>
+					<p>请在遵守法律的前提下使用，本页面不负任何责任！</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

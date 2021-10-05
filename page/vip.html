@@ -1,0 +1,64 @@
+<html>
+<head>
+  <SCRIPT LANGUAGE="JavaScript">
+        function onClear(){
+                document.getElementById("vipurl").value="";
+        }
+        function onPlay(){
+                var oJK = document.getElementById("jk");
+                var sJK=oJK.options[oJK.selectedIndex].value;
+                var sVipUrl = document.getElementById("vipurl").value;
+                var oWin = document.getElementById("play");
+                if (sVipUrl.length>0){
+                        oWin.src=sJK + sVipUrl;
+                }
+        }
+
+  </SCRIPT>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="res/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="res/js/jquery.min.js"></script>
+  <script src="res/js/bootstrap.min.js"></script> 
+  <title>    免费VIP播放器网页版    </title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12  col-md-12">
+        <h2 style="text-align: center;">超清解析</h2>
+        <div class="form-group">
+          <select class="form-control" name="jk" id="jk" size=1>
+              <option value="https://z1.m1907.cn/?jx=">线路1 1907（支持名称搜索）</option>
+              <option value="https://api.sigujx.com/?url=">线路2 思古</option>
+              <option value="https://www.h8jx.com/jiexi.php?url=" >线路3 H8</option>
+              <option value="https://vip.bljiex.com/?v="  selected>线路4 bl解析</option>
+              <option value="https://vip.bljiex.com/so.php?wd=" >线路4 bl解析1（名称搜索）</option>
+              <option value="https://jx.52damu.com/dmjx/jiexi.php?url=" >线路5 大幕</option>
+              <option value="https://jx.yingxiangbao.cn/vip.php?url=" >线路6 明日</option>
+              <option value="https://www.ckmov.vip/api.php?url=" >线路7 ckmov</option>
+              <option value="https://www.1717yun.com/jx/ty.php?url=" >线路8 17云</option>
+              <option value="https://api.bingdou.net/?url=" >线路11 冰豆（支持名称搜索）</option>
+              <option value="" >线路n 欢迎补充</option>
+              <option value="" >线路n 欢迎补充</option>
+          </select>
+        </div>
+        <div class="form-group form-group-lg input-group input-group-lg">
+           <input class="form-control" id="vipurl" type="text" value="" placeholder="请输入视频地址,如:https://www.iqiyi.com/v_19rw9hu9a8.html#curid=11685976300_2037b65b0553eea6940c8e54d96715cd">
+              <span class="input-group-btn" id="url_submit">
+                <button class="btn btn-default btn-primary" type="button" value="播放" onclick="onPlay()" "=""> 
+                  <span class="glyphicon glyphicon-arrow-right" id="url_submit_icon" aria-hidden="true">播</span>
+                </button>
+              </span>
+             <span class="input-group-btn">
+              <button class="btn btn-default btn-primary" type="button" value="播放" onclick="onClear()" "=""> 
+                <span style="font-size: small;">清除</span>
+              </button></span>
+        </div>
+       </div>
+     </div>
+   </div> 
+    <iframe src="" name="play" id="play" width="100%" align="center" height="100%" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+</body>
+</html>
