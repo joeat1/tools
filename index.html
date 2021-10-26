@@ -9,6 +9,10 @@
 	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="res/js/main.js"></script>
+	<link rel="stylesheet" href="res/css/main.css">
+	
 	<script>
 		var _hmt = _hmt || [];
 		(function() {
@@ -18,42 +22,6 @@
 				s.parentNode.insertBefore(hm, s);
 		})();
     </script>
-	<style>
-		h2, h4, p {
-			text-align: center;
-		}
-		
-		body {
-			background-image:url(res/img/background.jpg);
-			background-size:cover;
-			background-repeat:no-repeat;
-			background-attachment:fixed
-		}
-		
-		td {
-			border: 1px solid transparent !important;
-		}
-		
-		.icos {
-			width: 32px;;
-		}
-		
-		.col-md-4 {
-			margin-top: 3%;
-		}
-		
-		.card {
-			background-color: #ffffffa8;
-		}
-		.nav-link {
-			color: black;
-		}
-		
-		.site-footer {
-			position: relative;
-			border-top: 30px;
-		}
-	</style>
 	<script>
 		 var  generateHideElement = function (name, value) {
 		 	var tempInput = document.getElementById("type_str");
@@ -101,23 +69,25 @@
 		}
 	</script>
 	<script>
-		$(function () { $("[data-toggle='tooltip']").tooltip(); });
-	</script>
-	<script>
-		function isMatch(str1,str2)
-		{ 
-			var index = str1.indexOf(str2);
-			if(index==-1) return false;
-			return true;
+		var imgs =[
+				// "https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/img/background.jpg",
+			   "res/img/background.jpg",
+			   "res/img/background-sunset.jpg",
+			   "res/img/background-bird.jpg",
+			];  
+		function changebackground(){
+			console.log("change background")
+				var index=Math.floor(Math.random()*3);
+				var img = imgs[index];
+			   	document.body.style.backgroundImage="url("+img+")";
+			   	setTimeout("changebackground()", 5000);
 		}
-		console.log('location.hostname: '+window.location.hostname);
-		if (isMatch(window.location.hostname,'joeat1.github.io') == false)
-		{
-			if(window.location.hostname!='')
-			{
-				window.location.href= "https://joeat1.github.io" + window.location.pathname;
-			}
-		}
+		check();
+		$(function(){
+			setTimeout(4000);
+            changebackground();
+			$("[data-toggle='tooltip']").tooltip();
+		});
 	</script>
 </head>
 
@@ -187,7 +157,7 @@
 							<tbody>
 								<tr>
 									<td>
-										<img class="icos" src="https://www.yinsiduanxin.com/static/sms/images/logo.png">
+										<img class="icos" src="res/img/sms.png">
 										<a href="https://www.yinsiduanxin.com/" class="card-link" data-toggle="tooltip" data-placement="top"
 										 title="手机号注册不重要的网站时保护个人隐私">临时手机号</a>
 									</td>
@@ -220,7 +190,7 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="res/img/logo.png">
+										<img class="icos" src="res/img/ocrmaker.png">
 										<a href="http://www.ocrmaker.com/" class="card-link"> 图片转文字 </a>
 									</td>
 									<td>
@@ -231,7 +201,7 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="https://translate.google.cn/favicon.ico">
+										<img class="icos" src="res/img/google-favicon.ico">
 										<a href="https://translate.google.cn/" class="card-link">谷歌翻译</a>
 									</td>
 									<td>
@@ -272,7 +242,7 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="https://cdn.jsdelivr.net/gh/UallenQbit/Static/Kinh-Logo.png">
+										<img class="icos" src="res/img/KinhDownload.png">
 										<a href="https://baidu.kinh.cc/" class="card-link">KinhDownload</a>
 									</td>
 									<td>
@@ -297,7 +267,7 @@
 										<a href="https://www.mgtv.com/" class="card-link">芒果TV</a>
 									</td>
 									<td>
-										<img class="icos" src="res/img/622017dd4b0140432962d3ce0c6db99d77d2e937.png">
+										<img class="icos" src="res/img/bilibili.png">
 										<a href="https://www.bilibili.com/" class="card-link">哔哩哔哩</a>
 									</td>
 								</tr>
@@ -347,7 +317,7 @@
 										<a href="https://www.aimeijutt.com/" class="card-link">美剧鸟</a>
 									</td>
 									<td>
-										<img class="icos" src="https://www.hanjutv2020.com/pc/images/favicon.ico">
+										<img class="icos" src="res/img/hanju.png">
 										<a href="https://www.hanjutv2020.com/" class="card-link">韩剧TV</a>
 									</td>
 								</tr>
@@ -417,17 +387,17 @@
 										<a href="https://baoku.360.cn/soft/list/cid/0" class="card-link">软件下载</a>
 									</td>
 									<td>
-										<img class="icos" src="http://static.yingyonghui.com/resource/www/static/images/favicon.ico">
+										<img class="icos" src="res/img/yingyonghui.ico">
 										<a href="http://www.appchina.com/" class="card-link">应用汇</a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="res/img/logoo.png">
+										<img class="icos" src="res/img/ypppt.png">
 										<a href="http://www.ypppt.com/" class="card-link">PPT免费模板</a>
 									</td>
 									<td>
-										<img class="icos" src="res/img/logo3.png">
+										<img class="icos" src="res/img/pptbz.png">
 										<a href="http://www.pptbz.com/" class="card-link">PPT免费模板</a>
 									</td>
 									
@@ -446,7 +416,7 @@
 								<tr>
 									<td>
 										<img class="icos" src="res/favicon.ico">
-										<a href="https://node4.mkdmirror.workers.dev/0:/" class="card-link">软件资源下载</a>
+										<a href="https://node4.mkdmirror.workers.dev/0:/" class="card-link">软件下载</a>
 									</td>
 									<td>
 										<img class="icos" src="https://www.cn-ki.net/static/idata_logo.png">

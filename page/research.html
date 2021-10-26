@@ -9,6 +9,10 @@
 	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="../res/js/main.js"></script>
+	<link rel="stylesheet" href="../res/css/main.css">
+
 	<script>
             var _hmt = _hmt || [];
             (function() {
@@ -17,43 +21,7 @@
                  var s = document.getElementsByTagName("script")[0]; 
                  s.parentNode.insertBefore(hm, s);
             })();
-        </script>
-	<style>
-		h2, h4, p {
-			text-align: center;
-		}
-		
-		body {
-			background-image:url(../res/img/background.jpg);
-			background-size:cover;
-			background-repeat:no-repeat;
-			background-attachment:fixed
-		}
-		
-		td {
-			border: 1px solid transparent !important;
-		}
-		
-		.icos {
-			width: 32px;;
-		}
-		
-		.col-md-4 {
-			margin-top: 3%;
-		}
-		
-		.card {
-			background-color: #ffffffa8;
-		}
-		.nav-link {
-			color: black;
-		}
-		
-		.site-footer {
-			position: relative;
-			border-top: 30px;
-		}
-	</style>
+    </script>
 	<script>
 		 var  generateHideElement = function (name, value) {
 		 	var tempInput = document.getElementById("type_str");
@@ -98,20 +66,25 @@
 		}
 	</script>
 	<script>
-		function isMatch(str1,str2)
-		{ 
-			var index = str1.indexOf(str2);
-			if(index==-1) return false;
-			return true;
+		var imgs =[
+				// "https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/img/background.jpg",
+			   "res/img/background.jpg",
+			   "res/img/background-sunset.jpg",
+			   "res/img/background-bird.jpg",
+			];  
+		function changebackground(){
+			console.log("change background")
+				var index=Math.floor(Math.random()*3);
+				var img = imgs[index];
+			   	document.body.style.backgroundImage="url("+img+")";
+			   	setTimeout("changebackground()", 5000);
 		}
-		console.log('location.hostname: '+window.location.hostname);
-		if (isMatch(window.location.hostname,'joeat1.github.io') == false)
-		{
-			if(window.location.hostname!='')
-			{
-				window.location.href= "https://joeat1.github.io" + window.location.pathname;
-			}
-		}
+		check();
+		$(function(){
+			setTimeout(4000);
+            changebackground();
+			$("[data-toggle='tooltip']").tooltip();
+		});
 	</script>
 </head>
 
@@ -190,7 +163,7 @@
 										<a href="https://academic.microsoft.com/home" class="card-link">微软学术</a>
 									</td>
 									<td>
-										<img class="icos" src="../res/img/apple-touch-icon-114x114.png">
+										<img class="icos" src="../res/img/semanticscholar-icon-114x114.png">
 										<a href="https://www.semanticscholar.org/" class="card-link">semanticscholar</a>
 									</td>
 								</tr>
@@ -220,7 +193,7 @@
 										<a href="https://www.mendeley.com/" class="card-link">Mendeley</a>
 									</td>
 									<td>
-										<img class="icos" src="../res/img/scholar_logo.png">
+										<img class="icos" src="../res/img/baiduxueshu.png">
 										<a href="https://xueshu.baidu.com/" class="card-link">百度学术</a>
 									</td>
 								</tr>
@@ -277,7 +250,7 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="../res/img/UTjFYEzMSYVwzxIGVhMu.png" >
+										<img class="icos" src="../res/img/yuque.png" >
 										<a href="https://www.yuque.com/dashboard" class="card-link">语雀</a>
 									</td>
 									<td>
@@ -292,7 +265,7 @@
 										<a href="https://webdemo.myscript.com/views/math/index.html" class="card-link">在线latex公式</a>
 									</td>
 									<td>
-										<img class="icos" src="../res/img/table_logo.png">
+										<img class="icos" src="../res/img/tablesgenerator.png">
 										<a href="https://www.tablesgenerator.com/" class="card-link">在线latex表格</a>
 									</td>
 								</tr>
@@ -349,7 +322,7 @@
 										<a href="https://www.ccf.org.cn/Academic_Evaluation/By_category/" class="card-link">CCF推荐</a>
 									</td>
 									<td>
-										<img class="icos" src="../res/img/code15.jpg">
+										<img class="icos" src="../res/img/fenqubiao.jpg">
 										<a href="http://www.fenqubiao.com/" class="card-link">中科院分区</a>
 									</td>
 								</tr>
@@ -365,7 +338,7 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="../res/img/university-1.png">
+										<img class="icos" src="../res/img/phrasebank.png">
 										<a href="http://www.phrasebank.manchester.ac.uk/" class="card-link">论文短语库</a>
 									</td>
 									<td>

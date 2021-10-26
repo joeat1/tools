@@ -1,6 +1,7 @@
 function TransConvert() {
     document.getElementById("trans").value = ToTrans(document.getElementById("num").value)
 }
+
 function ToTrans(a) {
     var b = 9.999999999999E10,
     f = "\u96f6",

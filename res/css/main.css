@@ -1,0 +1,34 @@
+h2, h4, p {
+    text-align: center;
+}
+
+body {
+    background-image:url(../img/background.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed
+}
+
+td {
+    border: 1px solid transparent !important;
+}
+
+.icos {
+    width: 32px;;
+}
+
+.col-md-4 {
+    margin-top: 3%;
+}
+
+.card {
+    background-color: #ffffffa8;
+}
+.nav-link {
+    color: black;
+}
+
+.site-footer {
+    position: relative;
+    border-top: 30px;
+}
