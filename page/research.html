@@ -66,19 +66,6 @@
 		}
 	</script>
 	<script>
-		var imgs =[
-				// "https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/img/background.jpg",
-			   "res/img/background.jpg",
-			   "res/img/background-sunset.jpg",
-			   "res/img/background-bird.jpg",
-			];  
-		function changebackground(){
-			console.log("change background")
-				var index=Math.floor(Math.random()*3);
-				var img = imgs[index];
-			   	document.body.style.backgroundImage="url("+img+")";
-			   	setTimeout("changebackground()", 5000);
-		}
 		check();
 		$(function(){
 			setTimeout(4000);

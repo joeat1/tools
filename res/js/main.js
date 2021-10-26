@@ -14,3 +14,15 @@ function check(){
 			}
 		}
 }
+
+function changebackground(){
+	var imgs =[
+		"https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/img/background.jpg",
+	   "https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/img/background-bird.jpg",
+	];
+	console.log("change background")
+	var index=Math.floor(Math.random()*2);
+	var img = imgs[index];
+	document.body.style.backgroundImage="url("+img+")";
+	setTimeout("changebackground()", 5000);
+}
