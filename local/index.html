@@ -103,6 +103,22 @@
 	<script>
 		$(function () { $("[data-toggle='tooltip']").tooltip(); });
 	</script>
+	<script>
+		function isMatch(str1,str2)
+		{ 
+			var index = str1.indexOf(str2);
+			if(index==-1) return false;
+			return true;
+		}
+		console.log('location.hostname: '+window.location.hostname);
+		if (isMatch(window.location.hostname,'joeat1.github.io') == false)
+		{
+			if(window.location.hostname!='')
+			{
+				window.location.href= "https://joeat1.github.io" + window.location.pathname;
+			}
+		}
+	</script>
 </head>
 
 <body>
@@ -170,7 +186,8 @@
 									</td>
 									<td>
 										<img class="icos" src="../res/favicon.ico">
-										<a href="https://joeat1.github.io/miniPaint/" class="card-link">迷你画板</a>
+										<a href="https://joeat1.github.io/miniPaint/" class="card-link" data-toggle="tooltip" data-placement="top"
+										title="可以随意涂画，也可以上传图片抠图，多层构图等">迷你画板</a>
 									</td>
 								</tr>
 								<tr>
@@ -194,6 +211,12 @@
 					<div class="card-body">
 						<table class="table">
 							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="../res/favicon.ico">
+										<a href="RMBConvert.html" class="card-link">金额大小写转换</a>
+									</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -219,7 +242,7 @@
 		<div class="container"> 
 			<div class="row footer-top"> 
 				<div class="footer-about col-sm-12" style="color:#ffffff;"> 
-					<p>此页面列举的工具都为网页端直接处理，不通过网络传输数据，可以离线状态下使用</p>
+					<p>此页面列举的离线工具在网页加载完毕之后都不需要通过网络传输数据，可以断开网络下使用</p>
 					<p>此处仅提供了部分网站链接，欢迎start或fork<a href="https://github.com/joeat1/tools" >本Github项目</a>，也欢迎留言推荐较好的网站。</p>
 					<p>请在遵守法律的前提下使用，本页面不负任何责任！</p>
 				</div>

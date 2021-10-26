@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线人民币金额转大写</title>
+    <script src="../res/js/upperconvert.js"></script>
+</head>
+
+<body>
+    <h1>在线人民币金额转大写</h1>
+    <div class="topBar">
+        <h2 class="title">人民币金额数字大写转换</h2>
+        <div>
+            <div>
+                数字：
+                <input type="text" id="num" name="num">
+                金额:
+                <input type="text" id="trans" name="trans">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button class="btn btn-primary" onclick="TransConvert()">转换</button>
+        <button class="btn btn-default" name="clear" onclick="clearText('num')">清空</button>
+    </div>
+</body>
+
+</html>

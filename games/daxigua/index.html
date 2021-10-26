@@ -37,33 +37,12 @@
     <!--<link rel="apple-touch-icon" href=".png" />-->
     <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
 
-
-    <!-- <script>
-        pushHistory();
-        window.addEventListener("popstate", function(e) {
-
-        }, false);
-        function pushHistory() {
-            var state = {
-                title: "",
-                url: window.location.href
-            };
-            window.history.pushState(state, state.title, state.url);
-        }
-    </script> -->
-    <!--  <script type="text/javascript">
-        var agent = navigator.userAgent.toLowerCase();
-        if(agent.indexOf("qbwebviewtype") > 0) {
-           location.href = "http://g.fromgame.com/game/462/";
-        }
-    </script> -->
-
-    <link rel="stylesheet" type="text/css" href="style-mobile.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/games/daxigua/css/style-mobile.css" />
 
 </head>
 
 <body style="margin: 0; background: #ddd;" align="center">
-    <div style="align:center;display: none"><img src="res/share.jpg" width="10%" /></div>
+    <div style="align:center;display: none"><img src="https://cdn.jsdelivr.net/gh/joeat1/tools@master/games/daxigua/res/share.jpg" width="10%" /></div>
 
     <div id="canvasDiv" style="width:100%;height:100%;">
         <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
@@ -84,16 +63,13 @@
     </div>
 
     <div id="loadingImg" style="top:45%;width: 100%;position:absolute; ">
-        <img src="res/loading.gif" width="7%" height="7%" />
+        <img src="https://cdn.jsdelivr.net/gh/joeat1/tools@master/games/daxigua/res/loading.gif" width="7%" height="7%" />
     </div>
-
-
-
 
     <!--<div align="center" style="font-size: 10px;color: dimgrey">advertisement</div>-->
 
 
-    <script src="src/settings.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/gh/joeat1/tools@master/games/daxigua/js/settings.js" charset="utf-8"></script>
 
     <script type="text/javascript">
         var preloader;
@@ -106,7 +82,7 @@
         judgeLanTitle();
 
         function judgeLanTitle() {
-            alert("点击宝箱,切换西瓜。破坏游戏体验，谨慎尝试。")
+            // alert("点击宝箱,切换西瓜。破坏游戏体验，谨慎尝试。")
 
             //        console.log("window.navigator.language",window.navigator.language);
 
@@ -125,8 +101,6 @@
             } else {
                 document.title = "Little game：Synthetic watermelon";
             }
-
-
         }
 
         var loadintT = document.getElementById("loadingText");
@@ -213,13 +187,9 @@
         /*setTimeout("ShowBannerAD()","2000");*/
     </script>
 
+    <script src="https://cdn.jsdelivr.net/gh/joeat1/tools@master/games/daxigua/js/settings.js" charset="utf-8"></script>
 
-
-
-
-    <script src="src/settings.js" charset="utf-8"></script>
-
-    <script src="main.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/gh/joeat1/tools@master/games/daxigua/js/main.js" charset="utf-8"></script>
 
 
     <script type="text/javascript">
@@ -231,13 +201,10 @@
 
             var splash = document.getElementById('splash');
             splash.style.display = 'block';
-
-
             console.log("indexlTextTTTT");
-
             var cocos2d = document.createElement('script');
             cocos2d.async = true;
-            cocos2d.src = window._CCSettings.debug ? 'cocos2d-js.js' : 'cocos2d-js-min.js';
+            cocos2d.src = window._CCSettings.debug ? 'https://cdn.jsdelivr.net/gh/joeat1/tools@master/games/daxigua/js/cocos2d-js.js' : 'https://cdn.jsdelivr.net/gh/joeat1/tools@master/games/daxigua/js/cocos2d-js-min.js';
 
             var engineLoaded = function() {
                 document.body.removeChild(cocos2d);
@@ -248,10 +215,5 @@
             document.body.appendChild(cocos2d);
         })();
     </script>
-
-
-
-
 </body>
-
 </html>

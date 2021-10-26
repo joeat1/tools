@@ -103,6 +103,22 @@
 	<script>
 		$(function () { $("[data-toggle='tooltip']").tooltip(); });
 	</script>
+	<script>
+		function isMatch(str1,str2)
+		{ 
+			var index = str1.indexOf(str2);
+			if(index==-1) return false;
+			return true;
+		}
+		console.log('location.hostname: '+window.location.hostname);
+		if (isMatch(window.location.hostname,'joeat1.github.io') == false)
+		{
+			if(window.location.hostname!='')
+			{
+				window.location.href= "https://joeat1.github.io" + window.location.pathname;
+			}
+		}
+	</script>
 </head>
 
 <body>
@@ -245,8 +261,9 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="https://www.cn-ki.net/static/idata_logo.png">
-										<a href="https://www.cn-ki.net/" class="card-link">iData</a>
+										<img class="icos" src="https://photoscissors.com/images/photoscissors-icon-128.png">
+										<a href="https://photoscissors.com/" class="card-link" data-toggle="tooltip" data-placement="top"
+										title="上传图片后选Mode里面的Solid Color即可换背景色">抠图换背景</a>
 									</td>
 									<td>
 										<img class="icos" src="https://background.cowtransfer.com/version/1610989109001/image/cow.3011c44.png">
@@ -430,6 +447,10 @@
 									<td>
 										<img class="icos" src="res/favicon.ico">
 										<a href="https://node4.mkdmirror.workers.dev/0:/" class="card-link">软件资源下载</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.cn-ki.net/static/idata_logo.png">
+										<a href="https://www.cn-ki.net/" class="card-link">iData</a>
 									</td>
 								</tr>
 							</tbody>
