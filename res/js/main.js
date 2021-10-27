@@ -24,5 +24,5 @@ function changebackground(){
 	var index=Math.floor(Math.random()*2);
 	var img = imgs[index];
 	document.body.style.backgroundImage="url("+img+")";
-	setTimeout("changebackground()", 5000);
+	setTimeout("changebackground()", 10000);
 }
