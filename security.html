@@ -43,7 +43,12 @@
 
 <body>
 	<nav class="navbar navbar-expand-md navbar-dark">
-		<a class="navbar-brand" href="#" id="info" onmouseover="qrcode()" onmouseout="tipx(i)">安全常用工具</a>
+		<div class="navbar-brand">
+			<a id="info" onmouseover="qrcode()" onmouseout="tipx(i)">安全工具集</a>
+			<a href="https://github.com/joeat1/tools">
+				<img src="res/img/github.png" style="width:5%;margin-left:1%;" data-toggle="tooltip" data-placement="top" title="" data-original-title="欢迎start或fork本项目，推荐好网站；请在遵守法律的前提下使用！">
+			</a>
+		</div>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
 		</button>
@@ -188,14 +193,11 @@
 	</div>
 	
 	<br>
-	<footer class="site-footer"> 
-		<div class="container"> 
-			<div class="row footer-top"> 
-				<div class="footer-about col-sm-12" style="color:#ffffff;"> 
-					<p>此处仅提供了部分网站链接，欢迎start或fork<a href="https://github.com/joeat1/tools" >本Github项目</a>，也欢迎留言推荐较好的网站。</p>
-					<p>请在遵守法律的前提下使用，本页面不负任何责任！</p>
-				</div>
-			</div>
+	<footer class="site-footer">
+		<div class="footer-about col-sm-12" style="color:#ffffff;">
+			<p id="hitokototext" onclick="textforward()" style="font-family: KaiTi; font-size: 20px;">
+					珍惜每一天！
+			</p>
 		</div>
 	</footer>
 </body>
