@@ -38,46 +38,16 @@
                 return tempInput;
 		 	}
         }
-		function Searchtype(){
-			var type=document.getElementById("searchtype").options[document.getElementById("searchtype").selectedIndex].value;
-			if (type=="baidu"){
-				document.getElementById("searchweb").action="https://www.baidu.com/s";
-				document.getElementById("s_str").name="wd"
-			} else if (type=="bing"){
-				document.getElementById("searchweb").action="https://cn.bing.com/search";
-				document.getElementById("s_str").name="q"
-			} else if (type=="google"){
-				document.getElementById("searchweb").action="https://www.google.com/search";
-				document.getElementById("s_str").name="q"
-			} else if (type=="github"){
-				document.getElementById("searchweb").action="https://github.com/search";
-				document.getElementById("s_str").name="q"
-			} else if (type=="weixin"){
-				document.getElementById("searchweb").action="https://weixin.sogou.com/weixin";
-				document.getElementById("s_str").name="query"
-                var tempInput = generateHideElement("type", 2)
-                document.getElementById("searchweb").appendChild(tempInput);
-			} else if (type=="zhihu"){
-				document.getElementById("searchweb").action="https://www.zhihu.com/search";
-				document.getElementById("s_str").name="q"
-				var tempInput = generateHideElement("type", "content")
-                document.getElementById("searchweb").appendChild(tempInput);
-			}
-		}
-	</script>
-	<script>
 		check();
 		$(function(){
 			$("[data-toggle='tooltip']").tooltip();
-			setTimeout(10000);
-            changebackground();
 		});
 	</script>
 </head>
 
 <body>
 	<nav class="navbar navbar-expand-md navbar-dark">
-		<a class="navbar-brand" href="#">科研常用工具</a>
+		<a class="navbar-brand" href="#" onmouseover="qrcode()" onmouseout="tipx(i)">科研常用工具</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
 		</button>
@@ -90,7 +60,7 @@
 				<a class="nav-link" href="software_list.html"> 软件推荐 </a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="https://open985.com/"> 极客搜索 </a>
+				<a class="nav-link" href="../security.html"> 安全工具集 </a>
 			</li>
 		</ul>
 		</div>  
@@ -100,15 +70,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 offset-md-2">
-				<form id="searchweb" action="https://cn.bing.com/search" target="_blank">
+				<form id="searchweb" action="https://cn.bing.com/search?q=" target="_blank">
 					<div class="input-group input-group-lg">
 						<div class="input-group-prepend">
 							<select id="searchtype" class="input-group-text" style="font-size:medium" onchange="Searchtype();">
-								<option value="baidu">百度</option>
 								<option value="bing" selected>必应</option>
-								<option value="google">谷歌</option>
+								<option value="baiduxueshu">百度学术</option>
+								<option value="Letpub">SCI查询</option>
+								<option value="zhiwang">知网</option>
 								<option value="github">github</option>
-								<option value="weixin">微信</option>
 								<option value="zhihu">知乎</option>
 							</select>
 						</div>
@@ -241,7 +211,7 @@
 										<a href="https://www.yuque.com/dashboard" class="card-link">语雀</a>
 									</td>
 									<td>
-										<img class="icos" src="https://www.processon.com/favicon.ico">
+										<img class="icos" src="res/img/processon.ico">
 										<a href="https://www.processon.com/" class="card-link">ProcessOn</a>
 										<!-- 免登录版本 https://www.iodraw.com/diagram/ -->
 									</td>
@@ -371,6 +341,17 @@
 									<td>
 										<img class="icos" src="../res/favicon.ico">
 										<a href="https://github.com/joeat1/NLP_resource" class="card-link">NLP汇总</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="">
+										<a href="https://www.zhuanzhi.ai/" class="card-link"  data-toggle="tooltip"
+										data-placement="top" title="专业可信的知识分发">专知</a>
+									</td>
+									<td>
+										<img class="icos" src="">
+										<a href="https://tianchi.aliyun.com/" class="card-link">阿里天池</a>
 									</td>
 								</tr>
 							</tbody>

@@ -1,118 +1,94 @@
 <html>
+
 <head>
 	<title>常用工具集</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<base target="_blank"> <!-- <base target="_blank">  设置全局 a 链接打开新的空白页面_blank或原页面_self -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!-- 移动端显示优化 -->
+	<meta name="author" content="joeat1">
+	<meta name="keywords" content="工具集, joeat1, tools">
+	<meta name="description" content="工具集">
+	<meta name="referrer" content="default"> <!-- 定义请求头部 Referrer -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- <base href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/" target="_blank">   -->
+	<base href="." target="_blank">
 	<link rel="shortcut icon" href="res/favicon.ico">
 	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	
+
 	<script type="text/javascript" src="res/js/main.js"></script>
+	<script type="text/javascript" src="res/js/layer.js"></script>
 	<link rel="stylesheet" href="res/css/main.css">
-	
+
 	<script>
 		var _hmt = _hmt || [];
-		(function() {
-				var hm = document.createElement("script");
-				hm.src = "https://hm.baidu.com/hm.js?0c80cab2342e18b39d22c77289abc5f7";
-				var s = document.getElementsByTagName("script")[0]; 
-				s.parentNode.insertBefore(hm, s);
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?0c80cab2342e18b39d22c77289abc5f7";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
 		})();
-    </script>
-	<script>
-		 var  generateHideElement = function (name, value) {
-		 	var tempInput = document.getElementById("type_str");
-		 	if(tempInput)
-		 	{
-		 		tempInput.name = name;
-		 		tempInput.value = value;
-		 	} else{
-		 		var tempInput = document.createElement("input");
-                tempInput.type = "hidden";
-                tempInput.id = "type_str";
-                tempInput.name = name;
-                tempInput.value = value;
-                return tempInput;
-		 	}
-        }
-		function Searchtype(){
-			var type=document.getElementById("searchtype").options[document.getElementById("searchtype").selectedIndex].value;
-			if (type=="baidu"){
-				document.getElementById("searchweb").action="https://www.baidu.com/s";
-				document.getElementById("s_str").name="wd"
-			} else if (type=="bing"){
-				document.getElementById("searchweb").action="https://cn.bing.com/search";
-				document.getElementById("s_str").name="q"
-			} else if (type=="google"){
-				document.getElementById("searchweb").action="https://www.google.com/search";
-				document.getElementById("s_str").name="q"
-			} else if (type=="github"){
-				document.getElementById("searchweb").action="https://github.com/search";
-				document.getElementById("s_str").name="q"
-			} else if (type=="weixin"){
-				document.getElementById("searchweb").action="https://weixin.sogou.com/weixin";
-				document.getElementById("s_str").name="query"
-                var tempInput = generateHideElement("type", 2)
-                document.getElementById("searchweb").appendChild(tempInput);
-			} else if (type=="zhihu"){
-				document.getElementById("searchweb").action="https://www.zhihu.com/search";
-				document.getElementById("s_str").name="q"
-				var tempInput = generateHideElement("type", "content")
-                document.getElementById("searchweb").appendChild(tempInput);
-			} else if (type=="ip"){
-				document.getElementById("searchweb").action="https://www.atool99.com/host.php";
-				document.getElementById("s_str").name="q"
-			}
-		}
 	</script>
 	<script>
+		var generateHideElement = function (name, value) {
+			var tempInput = document.getElementById("type_str");
+			if (tempInput) {
+				tempInput.name = name;
+				tempInput.value = value;
+			} else {
+				var tempInput = document.createElement("input");
+				tempInput.type = "hidden";
+				tempInput.id = "type_str";
+				tempInput.name = name;
+				tempInput.value = value;
+				return tempInput;
+			}
+		}
 		check();
-		$(function(){
+		$(function () {
 			$("[data-toggle='tooltip']").tooltip();
-			setTimeout(10000);
-            changebackground();
+			// setTimeout(10000);
+			// changebackground();
 		});
 	</script>
 </head>
 
 <body>
 	<nav class="navbar navbar-expand-md navbar-dark">
-		<a class="navbar-brand" href="#">常用工具</a>
+		<a class="navbar-brand" href="#" id="info" onmouseover="qrcode()" onmouseout="tipx(i)">常用工具</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-		<span class="navbar-toggler-icon"></span>
+			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item">
-				<a class="nav-link" href="page/software_list.html"> 软件推荐 </a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="local/index.html"> 离线工具 </a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="games/index.html"> Games </a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="https://open985.com/"> 极客搜索 </a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="page/research.html"> 科研工具集 </a>
-			</li>
-		</ul>
-		</div>  
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="page/software_list.html"> 软件推荐 </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="local/index.html"> 离线工具 </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="games/index.html"> Games </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="page/research.html"> 科研工具集 </a>
+				</li>
+			</ul>
+		</div>
 	</nav>
 	<br>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 offset-md-2">
-				<form id="searchweb" action="https://www.baidu.com/s" target="_blank">
+				<form id="searchweb" action="https://www.baidu.com/s?wd=" method="get" target="_blank">
 					<div class="input-group input-group-lg">
 						<div class="input-group-prepend">
-							<select id="searchtype" class="input-group-text" style="font-size:medium" onchange="Searchtype();">
+							<select id="searchtype" class="input-group-text" style="font-size:medium"
+															onchange="Searchtype();">
 								<option value="baidu" selected>百度</option>
 								<option value="bing">必应</option>
 								<option value="google">谷歌</option>
@@ -120,22 +96,24 @@
 								<option value="weixin">微信</option>
 								<option value="zhihu">知乎</option>
 								<option value="ip">IP查询</option>
+								<option value="MAGI">MAGI</option>
 							</select>
 						</div>
-						<input type="text" class="form-control" name="wd" id="s_str" maxlength="100" autocomplete="off">
+						<input type="text" class="form-control" id="s_str" maxlength="100" 
+									autocomplete="off" spellcheck="false" placeholder="">
 						<div class="input-group-append">
-							<button class="btn btn-primary" style="font-size:medium" type="submit">搜索</button>  
+							<button class="btn btn-primary" style="font-size:medium" onclick="submitBtnClick()">搜索</button>
 						</div>
 					</div>
 				</form>
 			</div>
 			<br>
-			
+
 			<div class="col-md-12">
 			</div>
 			<br>
 			<br>
-			
+
 			<div class="col-md-4">
 				<h4 class="card-title">在线工具</h4>
 				<div class="card">
@@ -145,13 +123,13 @@
 								<tr>
 									<td>
 										<img class="icos" src="res/img/sms.png">
-										<a href="https://www.yinsiduanxin.com/" class="card-link" data-toggle="tooltip" data-placement="top"
-										 title="手机号注册不重要的网站时保护个人隐私">临时手机号</a>
+										<a href="https://www.yinsiduanxin.com/" class="card-link" data-toggle="tooltip"
+											data-placement="top" title="手机号注册不重要的网站时保护个人隐私">临时手机号</a>
 									</td>
 									<td>
 										<img class="icos" src="res/favicon.ico">
-										<a href="http://24mail.chacuo.net/" class="card-link"  data-toggle="tooltip" data-placement="top"
-										title="邮箱注册不重要的网站时保护个人隐私">临时邮箱</a>
+										<a href="http://24mail.chacuo.net/" class="card-link" data-toggle="tooltip"
+											data-placement="top" title="邮箱注册不重要的网站时保护个人隐私">临时邮箱</a>
 									</td>
 								</tr>
 								<tr>
@@ -161,7 +139,8 @@
 									</td>
 									<td>
 										<img class="icos" src="https://static.convertio.co/favicon.ico">
-										<a href="https://convertio.co/zh/" class="card-link" data-toggle="tooltip" data-placement="top" title="支持超过 300 种不同的文件格式间的转换" >格式转换</a>
+										<a href="https://convertio.co/zh/" class="card-link" data-toggle="tooltip"
+											data-placement="top" title="支持超过 300 种不同的文件格式间的转换">格式转换</a>
 									</td>
 									<!-- https://cn.office-converter.com/   https://cn.office-converter.com/svg/Office-Converter.svg -->
 								</tr>
@@ -171,7 +150,7 @@
 										<a href="https://clideo.com/" class="card-link"> 在线视频工具 </a>
 									</td>
 									<td>
-										<img class="icos" src="https://static.clewm.net/static/images/favicon.ico">
+										<img class="icos" src="res/img/qrcode.ico">
 										<a href="https://cli.im/" class="card-link"> 二维码工具 </a>
 									</td>
 								</tr>
@@ -198,7 +177,8 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="https://cdn.tianyancha.com/web-require-js/public/images/nav-box-pro-2.png">
+										<img class="icos"
+											src="https://cdn.tianyancha.com/web-require-js/public/images/nav-box-pro-2.png">
 										<a href="https://www.tianyancha.com/" class="card-link">天眼查</a>
 									</td>
 									<td>
@@ -208,22 +188,25 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="https://www.processon.com/favicon.ico">
+										<img class="icos" src="res/img/processon.ico">
 										<a href="https://www.processon.com/" class="card-link">ProcessOn</a>
 									</td>
 									<td>
-										<img class="icos" src="https://www.fakenamegenerator.com/apple-touch-icon-57x57.png">
+										<img class="icos"
+											src="https://www.fakenamegenerator.com/apple-touch-icon-57x57.png">
 										<a href="https://www.fakenamegenerator.com/" class="card-link"> Fakename </a>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="https://photoscissors.com/images/photoscissors-icon-128.png">
-										<a href="https://photoscissors.com/" class="card-link" data-toggle="tooltip" data-placement="top"
-										title="上传图片后选Mode里面的Solid Color即可换背景色">抠图换背景</a>
+										<img class="icos"
+											src="https://photoscissors.com/images/photoscissors-icon-128.png">
+										<a href="https://photoscissors.com/" class="card-link" data-toggle="tooltip"
+											data-placement="top" title="上传图片后选Mode里面的Solid Color即可换背景色">抠图换背景</a>
 									</td>
 									<td>
-										<img class="icos" src="https://background.cowtransfer.com/version/1610989109001/image/cow.3011c44.png">
+										<img class="icos"
+											src="https://background.cowtransfer.com/version/1610989109001/image/cow.3011c44.png">
 										<a href="https://cowtransfer.com/" class="card-link">奶牛快传</a>
 									</td>
 								</tr>
@@ -260,8 +243,8 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="https://pa.tedcdn.com/favicon.ico">
-										<a href="https://www.ted.com/"  class="card-link">TED</a>
+										<img class="icos" src="res/img/TED.ico">
+										<a href="https://www.ted.com/" class="card-link">TED</a>
 									</td>
 									<td>
 										<img class="icos" src="res/img/oeasy.png">
@@ -290,7 +273,8 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="https://file.ipadown.com/tophub/assets/images/favicon/favicon-32x32.png">
+										<img class="icos"
+											src="https://file.ipadown.com/tophub/assets/images/favicon/favicon-32x32.png">
 										<a href="https://tophub.today/" class="card-link">今日热榜</a>
 									</td>
 									<td>
@@ -312,6 +296,10 @@
 									<td>
 										<img class="icos" src="res/favicon.ico">
 										<a href="page/TVchannel.html" class="card-link">电视直播</a>
+									</td>
+									<td>
+										<img class="icos" src="res/favicon.ico">
+										<a href="https://www.ck180.net/" class="card-link">CK电影</a>
 									</td>
 								</tr>
 							</tbody>
@@ -347,7 +335,8 @@
 								</tr>
 								<tr>
 									<td>
-										<img class="icos" src="https://icon.qiantucdn.com/static/images/public/greenlogo.png">
+										<img class="icos"
+											src="https://icon.qiantucdn.com/static/images/public/greenlogo.png">
 										<a href="https://www.58pic.com/" class="card-link">千图网</a>
 									</td>
 									<td>
@@ -387,7 +376,7 @@
 										<img class="icos" src="res/img/pptbz.png">
 										<a href="http://www.pptbz.com/" class="card-link">PPT免费模板</a>
 									</td>
-									
+
 								</tr>
 								<tr>
 									<td>
@@ -418,17 +407,22 @@
 		</div>
 		<br>
 	</div>
-	
+
 	<br>
-	<footer class="site-footer"> 
-		<div class="container"> 
-			<div class="row footer-top"> 
-				<div class="footer-about col-sm-12" style="color:#ffffff;"> 
-					<p>此处仅提供了部分网站链接，欢迎start或fork<a href="https://github.com/joeat1/tools" >本Github项目</a>，也欢迎留言推荐较好的网站。</p>
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row footer-top">
+				<div class="footer-about col-sm-12" style="color:#ffffff;">
+					<p id="hitokototext" style="cursor: pointer; font-size: 18px; color: rgba(255, 255, 255, 0.6);" onclick="textforward()">
+							珍惜每一天！
+					</p>
+					<p>此处仅提供了部分网站链接，欢迎start或fork<a href="https://github.com/joeat1/tools">本Github项目</a>，也欢迎留言推荐较好的网站。
+					</p>
 					<p>请在遵守法律的前提下使用，本页面不负任何责任！</p>
 				</div>
 			</div>
 		</div>
 	</footer>
 </body>
+
 </html>

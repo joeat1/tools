@@ -1,0 +1,202 @@
+<html>
+
+<head>
+	<title>安全工具集</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!-- 移动端显示优化 -->
+	<meta name="author" content="joeat1">
+	<meta name="keywords" content="工具集, joeat1, tools">
+	<meta name="description" content="工具集">
+	<meta name="referrer" content="default"> <!-- 定义请求头部 Referrer -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- <base href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/" target="_blank">   -->
+	<base href="." target="_blank">
+	<link rel="shortcut icon" href="res/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="res/js/main.js"></script>
+	<script type="text/javascript" src="res/js/layer.js"></script>
+	<link rel="stylesheet" href="res/css/main.css">
+
+	<script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?0c80cab2342e18b39d22c77289abc5f7";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	<script>
+		check();
+		$(function () {
+			$("[data-toggle='tooltip']").tooltip();
+			// setTimeout(10000);
+			// changebackground();
+		});
+	</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark">
+		<a class="navbar-brand" href="#" id="info" onmouseover="qrcode()" onmouseout="tipx(i)">安全常用工具</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="index.html"> 常用工具集 </a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="page/research.html"> 科研工具集 </a>
+			</li>
+		</ul>
+		</div>  
+	</nav>
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<form id="searchweb" action="https://cn.bing.com/search?q=" target="_blank">
+					<div class="input-group input-group-lg">
+						<div class="input-group-prepend">
+							<select id="searchtype" class="input-group-text" style="font-size:medium" onchange="Searchtype();">
+								<option value="bing" selected>必应</option>
+								<option value="github">github</option>
+								<option value="Shodan">Shodan</option>
+								<option value="Censys">Censys</option>
+								<option value="zhihu">知乎</option>
+							</select>
+						</div>
+						<input type="text" class="form-control" name="q" id="s_str" maxlength="100" autocomplete="off">
+						<div class="input-group-append">
+							<button class="btn btn-primary" style="font-size:medium" type="submit">搜索</button>  
+						</div>
+					</div>
+				</form>
+			</div>
+			<br>
+			
+			<div class="col-md-12">
+			</div>
+			<br>
+			<br>
+			
+			<div class="col-md-4">
+				<h4 class="card-title">编程开发</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="res/img/leetcode.svg">
+										<a href="https://leetcode-cn.com/" class="card-link">力扣</a>
+									</td>
+									<td>
+										<img class="icos" src="res/img/leetcode.svg">
+										<a href="https://oi-wiki.org/" class="card-link" data-toggle="tooltip"
+										data-placement="top" title="算法的维基百科">OI-wiki</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="">
+										<a href="https://www.v2ex.com/" class="card-link">v2ex</a>
+									</td>
+									<td>
+										<img class="icos" src="res/img/juejin.svg">
+										<a href="https://juejin.cn/" class="card-link">掘金</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="">
+										<a href="https://docschina.org/" class="card-link" data-toggle="tooltip"
+										data-placement="top" title="前端文档库">印记中文</a>
+									</td>
+									<td>
+										<img class="icos" src="https://www.php.cn/static/images/logo.png">
+										<a href="https://www.php.cn/course.html" class="card-link">php中文网</a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="icos" src="">
+										<a href="https://www.freecodecamp.one" class="card-link">freeCodeCamp中文</a>
+									</td>
+									
+								</tr>
+								<tr>
+									
+									<td>
+										<img class="icos" src="">
+										<a href="https://bestwebsite.gallery/" class="card-link">bestwebsite</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4 class="card-title">在线工具</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="https://cdn.sojson.com/ui/images/jsencode.logo.png">
+										<a href="https://www.sojson.com/jsobfuscator.html" class="card-link">JS加密混淆</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4 class="card-title">资源下载</h4>
+				<div class="card">
+					<div class="card-body">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>
+										<img class="icos" src="https://static.52pojie.cn/static/image/common/logo.png">
+										<a href="https://www.52pojie.cn/" class="card-link">吾爱破解</a>
+									</td>
+									<td>
+										<img class="icos" src="">
+										<a href="https://mirrors.tuna.tsinghua.edu.cn/" class="card-link">THU镜像站</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+	
+	<br>
+	<footer class="site-footer"> 
+		<div class="container"> 
+			<div class="row footer-top"> 
+				<div class="footer-about col-sm-12" style="color:#ffffff;"> 
+					<p>此处仅提供了部分网站链接，欢迎start或fork<a href="https://github.com/joeat1/tools" >本Github项目</a>，也欢迎留言推荐较好的网站。</p>
+					<p>请在遵守法律的前提下使用，本页面不负任何责任！</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
