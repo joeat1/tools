@@ -22,27 +22,6 @@
                  s.parentNode.insertBefore(hm, s);
             })();
     </script>
-	<script>
-		 var  generateHideElement = function (name, value) {
-		 	var tempInput = document.getElementById("type_str");
-		 	if(tempInput)
-		 	{
-		 		tempInput.name = name;
-		 		tempInput.value = value;
-		 	} else{
-		 		var tempInput = document.createElement("input");
-                tempInput.type = "hidden";
-                tempInput.id = "type_str";
-                tempInput.name = name;
-                tempInput.value = value;
-                return tempInput;
-		 	}
-        }
-		check();
-		$(function(){
-			$("[data-toggle='tooltip']").tooltip();
-		});
-	</script>
 </head>
 
 <body>
