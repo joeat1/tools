@@ -29,6 +29,51 @@ td {
     color: black;
 }
 
+#t_fixed {
+    position: fixed;
+    right: 10px;
+    /*bottom: -85px;*/
+    bottom: 10px;
+    transition: bottom ease .3s;
+    z-index: 3;
+    font-size: 18px;
+    text-align: center;
+    line-height: 36px;
+}
+
+#t_fixed a.btn {
+    width: 36px;
+    height: 36px;
+    display: block;
+    text-decoration: none;
+    color: #999;
+    border-radius: 5px;
+}
+
+#t_fixed a.btn:hover {
+    background: #F5F5F5;
+}
+
+#t_fixed a.btn.wechat:hover {
+    color: #2ECC71;
+}
+
+#t_fixed a.btn.qq-qun:hover {
+    color: #3498DB;
+}
+
+#t_fixed a.btn.weibo:hover {
+    color: #E74C3C;
+}
+
+#t_fixed a.btn.github:hover {
+    color: #2C3E50;
+}
+
+#t_fixed a.btn.gotop:hover {
+    color: #34495E;
+}
+
 .site-footer {
     position: relative;
     border-top: 30px;

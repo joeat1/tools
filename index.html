@@ -11,8 +11,8 @@
 	<meta name="description" content="工具集">
 	<meta name="referrer" content="default"> <!-- 定义请求头部 Referrer -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<base href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/" target="_blank">  
-	<!-- <base target="_blank"> -->
+	<!-- <base href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/" target="_blank">   -->
+	<base target="_blank">
 	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/favicon.ico">
 	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -21,7 +21,8 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/js/layer.js"></script>
 
 	<script type="text/javascript" src="res/js/main.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/css/main.css">
+	<link rel="stylesheet" href="res/css/main.css">
+	<link rel="stylesheet" href="res/css/all.css">
 
 	<script>
 		var _hmt = _hmt || [];
@@ -38,9 +39,6 @@
 	<nav class="navbar navbar-expand-md navbar-dark">
 		<div class="navbar-brand">
 			<a id="info" onmouseover="qrcode()" onmouseout="tipx(i)">常用工具集</a>
-			<a href="https://github.com/joeat1/tools">
-				<img src="res/img/github.png" style="width:5%;margin-left:1%;" data-toggle="tooltip" data-placement="top" title="" data-original-title="欢迎start或fork本项目，推荐好网站；请在遵守法律的前提下使用！">
-			</a>
 		</div>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -108,12 +106,12 @@
 									<td>
 										<img class="icos" src="res/img/sms.png">
 										<a href="https://www.yinsiduanxin.com/" class="card-link" data-toggle="tooltip"
-											data-placement="top" title="手机号注册不重要的网站时保护个人隐私">临时手机号</a>
+											title="手机号注册不重要的网站时保护个人隐私">临时手机号</a>
 									</td>
 									<td>
 										<img class="icos" src="res/favicon.ico">
 										<a href="http://24mail.chacuo.net/" class="card-link" data-toggle="tooltip"
-											data-placement="top" title="邮箱注册不重要的网站时保护个人隐私">临时邮箱</a>
+											title="邮箱注册不重要的网站时保护个人隐私">临时邮箱</a>
 									</td>
 								</tr>
 								<tr>
@@ -124,7 +122,7 @@
 									<td>
 										<img class="icos" src="https://static.convertio.co/favicon.ico">
 										<a href="https://convertio.co/zh/" class="card-link" data-toggle="tooltip"
-											data-placement="top" title="支持超过 300 种不同的文件格式间的转换">格式转换</a>
+											title="支持超过 300 种不同的文件格式间的转换">格式转换</a>
 									</td>
 									<!-- https://cn.office-converter.com/   https://cn.office-converter.com/svg/Office-Converter.svg -->
 								</tr>
@@ -186,7 +184,7 @@
 										<img class="icos"
 											src="https://photoscissors.com/images/photoscissors-icon-128.png">
 										<a href="https://photoscissors.com/" class="card-link" data-toggle="tooltip"
-											data-placement="top" title="上传图片后选Mode里面的Solid Color即可换背景色">抠图换背景</a>
+											title="上传图片后选Mode里面的Solid Color即可换背景色">抠图换背景</a>
 									</td>
 									<td>
 										<img class="icos"
@@ -391,7 +389,17 @@
 		</div>
 		<br>
 	</div>
-
+	<div id="t_fixed">
+		<!-- <a class="btn wechat js-wechat-mp js-tip"  data-toggle="tooltip" title="微信公众号: 已关闭">
+			<i class="fab fa-weixin"></i>
+		</a> -->
+		<a rel="noopener noreferrer" class="btn github js-tip" href="https://github.com/joeat1"  data-toggle="tooltip" title="github: joeat1">
+			<i class="fab fa-github-alt"></i>
+		</a>
+		<a target="_self" class="btn gotop js-tip" href="#" data-toggle="tooltip" title="返回顶部">
+			<i class="fas fa-arrow-up"></i>
+		</a>
+	</div>
 	<br>
 	<footer class="site-footer">
 		<div class="footer-about col-sm-12" style="color:#ffffff;">

@@ -10,10 +10,12 @@
 	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/js/layer.js"></script>
 	
 	
 	<script type="text/javascript" src="../res/js/main.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/css/main.css">
+	<link rel="stylesheet" href="../res/css/main.css">
+	<link rel="stylesheet" href="../res/css/all.css">
 
 	<script>
             var _hmt = _hmt || [];
@@ -30,9 +32,6 @@
 	<nav class="navbar navbar-expand-md navbar-dark">
 		<div class="navbar-brand">
 			<a id="info" onmouseover="qrcode()" onmouseout="tipx(i)">科研工具集</a>
-			<a href="https://github.com/joeat1/tools">
-				<img src="../res/img/github.png" style="width:5%;margin-left:1%;" data-toggle="tooltip" data-placement="top" title="" data-original-title="欢迎start或fork本项目，推荐好网站；请在遵守法律的前提下使用！">
-			</a>
 		</div>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
@@ -348,7 +347,17 @@
 		</div>
 		<br>
 	</div>
-	
+	<div id="t_fixed">
+		<!-- <a class="btn wechat js-wechat-mp js-tip"  data-toggle="tooltip" title="微信公众号: 已关闭">
+			<i class="fab fa-weixin"></i>
+		</a> -->
+		<a rel="noopener noreferrer" class="btn github js-tip" href="https://github.com/joeat1"  data-toggle="tooltip" title="github: joeat1">
+			<i class="fab fa-github-alt"></i>
+		</a>
+		<a target="_self" class="btn gotop js-tip" href="#" data-toggle="tooltip" title="返回顶部">
+			<i class="fas fa-arrow-up"></i>
+		</a>
+	</div>
 	<br>
 	<footer class="site-footer">
 		<div class="footer-about col-sm-12" style="color:#ffffff;">
