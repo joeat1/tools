@@ -3,7 +3,8 @@ h2, h4, p {
 }
 
 body {
-    background-image:url(../img/background.jpg); /* https://bing.ioliu.cn/v1/rand */
+    /* background-image:url(https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/img/background.jpg); */
+    background-image:url(https://bing.ioliu.cn/v1/rand);
     background-size:cover;
     background-repeat:no-repeat;
     background-attachment:fixed
