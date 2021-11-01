@@ -1,64 +1,170 @@
 <html>
+
 <head>
   <SCRIPT LANGUAGE="JavaScript">
-        function onClear(){
-                document.getElementById("vipurl").value="";
-        }
-        function onPlay(){
-                var oJK = document.getElementById("jk");
-                var sJK=oJK.options[oJK.selectedIndex].value;
-                var sVipUrl = document.getElementById("vipurl").value;
-                var oWin = document.getElementById("play");
-                if (sVipUrl.length>0){
-                        oWin.src=sJK + sVipUrl;
-                }
-        }
-
+    
   </SCRIPT>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="shortcut icon" href="res/favicon.ico">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/favicon.ico">
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="res/js/jquery.min.js"></script>
-  <script src="res/js/bootstrap.min.js"></script> 
-  <title>    免费VIP播放器网页版    </title>
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/js/layer.js"></script>
+
+  <script type="text/javascript" src="../res/js/main"></script>
+  <link rel="stylesheet" href="../res/css/main.css">
+
+  <script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?0c80cab2342e18b39d22c77289abc5f7";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+
+  <title> 免费VIP播放器网页版 </title>
 </head>
+
 <body>
+  <nav class="navbar navbar-expand-md navbar-dark">
+		<div class="navbar-brand">
+			<a id="info" onmouseover="qrcode()" onmouseout="tipx(i)">视频解析</a>
+		</div>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="https://joeat1.github.io/tools/"> 常用工具集 </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://joeat1.github.io/tools/local/index.html"> 离线工具 </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://joeat1.github.io/tools/games/index.html"> Games </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://joeat1.github.io/tools/page/research.html"> 科研工具集 </a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<br>
   <div class="container">
     <div class="row">
       <div class="col-xs-12  col-md-12">
-        <h2 style="text-align: center;">超清解析</h2>
-        <div class="form-group">
-          <select class="form-control" name="jk" id="jk" size=1>
-              <option value="https://z1.m1907.cn/?jx=">线路1 1907（支持名称搜索）</option>
-              <option value="https://api.sigujx.com/?url=">线路2 思古</option>
-              <option value="https://www.h8jx.com/jiexi.php?url=" >线路3 H8</option>
-              <option value="https://vip.bljiex.com/?v=" >线路4 bl解析</option>
-              <option value="https://vip.bljiex.com/so.php?wd=" selected>线路5 bl解析1（名称搜索）</option>
-              <option value="https://jx.52damu.com/dmjx/jiexi.php?url=" >线路6 大幕</option>
-              <option value="https://jx.yingxiangbao.cn/vip.php?url=" >线路7 明日</option>
-              <option value="https://www.ckmov.vip/api.php?url=" >线路8 ckmov</option>
-              <option value="https://www.1717yun.com/jx/ty.php?url=" >线路9 17云</option>
-              <option value="https://api.bingdou.net/?url=" >线路10 冰豆（支持名称搜索）</option>
-              <option value="" >线路n 欢迎补充</option>
-              <option value="" >线路n 欢迎补充</option>
-          </select>
+        <div class="input-group input-group-lg" style="margin-top: 15px;margin-bottom: 15px">
+          <div class="input-group-prepend" style="width: 12%;">
+            <select class="form-control" name="jk" id="jk" size=1>
+              <option value="线路1"> M1907解析（支持名称搜索）</option>
+              <option value="线路2"> 思古</option>
+              <option value="线路3"> H8</option>
+              <option value="线路4"> bl解析</option>
+              <option value="线路5" selected> bl解析（名称搜索）</option>
+              <option value="线路6"> 大幕</option>
+              <option value="线路7"> 明日</option>
+              <option value="线路8"> ckmov</option>
+              <option value="线路9"> 17云</option>
+              <option value="线路10"> 冰豆（支持名称搜索）</option>
+              <option value="线路11"> 全民解析</option>
+            </select>
+          </div>
+          <input type="text" class="form-control" id="VipUrl" maxlength="100" autocomplete="off" spellcheck="false"
+            placeholder="输入视频播放地址" >
+          <div class="input-group-append">
+            <input type="button" class="btn btn-primary" style="font-size:70%" onclick="onPlay()" value="播放">
+          </div>
         </div>
-        <div class="form-group form-group-lg input-group input-group-lg">
-           <input class="form-control" id="vipurl" type="text" value="" placeholder="请输入视频地址,如:https://www.iqiyi.com/v_19rw9hu9a8.html#curid=11685976300_2037b65b0553eea6940c8e54d96715cd">
-              <span class="input-group-btn" id="url_submit">
-                <button class="btn btn-default btn-primary" type="button" value="播放" onclick="onPlay()" "=""> 
-                  <span class="glyphicon glyphicon-arrow-right" id="url_submit_icon" aria-hidden="true">播</span>
-                </button>
-              </span>
-             <span class="input-group-btn">
-              <button class="btn btn-default btn-primary" type="button" value="播放" onclick="onClear()" "=""> 
-                <span style="font-size: small;">清除</span>
-              </button></span>
+        <iframe id="play" name="play" width="100%" height="600px" allowfullscreen="true" webkitallowfullscreen="true"
+          mozallowfullscreen="true" style="background-color:#000;" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div class="col-xs-12  col-md-12">
+        <div class="logos_lists">
+          <dl>
+            <dt><a href="http://vip.iqiyi.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/1384b00004b43007283ce"></a></dt>
+            <dd>爱奇艺视频</dd>
+          </dl>
+          <dl>
+            <dt><a href="https://vip.youku.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/ffa2000273f0c198c2a4"></a></dt>
+            <dd>优酷视频</dd>
+          </dl>
+          <dl>
+            <dt><a href="http://www.le.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/1386400005ad7e1a5d459"></a></dt>
+            <dd>乐视TV视频</dd>
+          </dl>
+          <dl>
+            <dt><a href="https://v.qq.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/137930001aafe25034361"></a></dt>
+            <dd>腾讯视频</dd>
+          </dl>
+          <dl>
+            <dt><a href="http://www.tudou.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/fe3d0002c7f479457b49"></a></dt>
+            <dd>土豆视频</dd>
+          </dl>
+          <dl>
+            <dt><a href="https://tv.sohu.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/138060000fad55f487527"></a></dt>
+            <dd>搜狐视频</dd>
+          </dl>
+          <dl>
+            <dt><a href="http://www.56.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/137bf00012335d7594060"></a></dt>
+            <dd>56视频</dd>
+          </dl>
+          <dl>
+            <dt><a href="http://www.ku6.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/1376500022286abcc6747"></a></dt>
+            <dd>酷6视频</dd>
+          </dl>
+          <dl>
+            <dt><a href="http://www.wasu.cn/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/137830001485cf58f75a2"></a></dt>
+            <dd>WASU华数视频</dd>
+          </dl>
+          <dl>
+            <dt><a href="http://www.mgtv.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/1384700020754ff06c2db"></a></dt>
+            <dd>芒果TV视频</dd>
+          </dl>
+          <dl>
+            <dt><a href="https://www.bilibili.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/ff7800019fdea09daeac"></a></dt>
+            <dd>bilibili</dd>
+          </dl>
+          <dl>
+            <dt><a href="http://vip.1905.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/137b80001595de5274518"></a></dt>
+            <dd>1905</dd>
+          </dl>
+          <dl>
+            <dt><a href="http://www.fun.tv/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/1377d0001658302df3b2a"></a></dt>
+            <dd>风行网</dd>
+          </dl>
+          <dl>
+            <dt><a href="http://vip.pptv.com/" target="_blank"><img
+                  src="https://p.pstatp.com/origin/138020001844748c52914"></a></dt>
+            <dd>pptv</dd>
+          </dl>
         </div>
-       </div>
-     </div>
-   </div> 
-    <iframe src="" name="play" id="play" width="100%" align="center" height="100%" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+      </div>
+      <div class="col-xs-12  col-md-12">
+        <p style="color: white;">所有资源均来源第三方网站，本网页并不提供影片存储，视频版权归属其合法持有人所有</p>
+        <p style="color: white;"> 页面被浏览 <span id='hit-counts'></span> 次，当前访问城市：<span id='info-visitor'></span></p>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>

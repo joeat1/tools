@@ -4,7 +4,7 @@ h2, h4, p {
 }
 
 body {
-    background-image:url(../img/background.jpg);
+    background-image:url(../img/background.jpg); /* https://bing.ioliu.cn/v1/rand */
     background-size:cover;
     background-repeat:no-repeat;
     background-attachment:fixed
@@ -78,3 +78,36 @@ td {
     position: relative;
     border-top: 30px;
 }
+
+
+
+
+.logos_lists dl {
+    float: left;
+    position: relative;
+    padding: 10px 14px;
+    margin: 10px;
+    background: #fff;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    -webkit-transition: border linear .2s, box-shadow linear .2s;
+    -moz-transition: border linear .2s, box-shadow linear .2s;
+    -o-transition: border linear .2s, box-shadow linear .2s;
+    transition: border linear .2s, box-shadow linear .2s
+  }
+
+  .logos_lists dl:hover {
+    border-color: rgba(82, 168, 236, .8);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(82, 168, 236, .6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(82, 168, 236, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(82, 168, 236, .6)
+  }
+
+  .logos_lists dl dt img {
+    width: 108px
+  }
+
+  .logos_lists dl dd {
+    display: none;
+  }

@@ -20,7 +20,7 @@
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/js/layer.js"></script>
 
-	<script type="text/javascript" src="res/js/main.js"></script>
+	<script type="text/javascript" src="res/js/main"></script>
 	<link rel="stylesheet" href="res/css/main.css">
 	<link rel="stylesheet" href="res/css/all.css">
 
@@ -32,13 +32,6 @@
 			var s = document.getElementsByTagName("script")[0];
 			s.parentNode.insertBefore(hm, s);
 		})();
-	</script>
-	<script> var isAdBlockActive=true; </script>
-	<script src="res/js/ads.js"></script>
-	<script>
-		if (isAdBlockActive) { 
-		console.log("The visitor is blocking ads");
-		}
 	</script>
 </head>
 
@@ -140,7 +133,8 @@
 									</td>
 									<td>
 										<img class="icos" src="res/img/qrcode.ico">
-										<a href="https://cli.im/" class="card-link"> 二维码工具 </a>
+										<a href="https://joeat1.github.io/tools/page/qrcode" class="card-link"> 二维码生成 </a>
+										<!-- https://cli.im/ -->
 									</td>
 								</tr>
 								<tr>
@@ -400,6 +394,12 @@
 		<!-- <a class="btn wechat js-wechat-mp js-tip"  data-toggle="tooltip" title="微信公众号: 已关闭">
 			<i class="fab fa-weixin"></i>
 		</a> -->
+		<a target="_self" class="btn js-tip" id='jokes' data-toggle="tooltip" title="讲个笑话">
+			<i class="far fa-smile-wink"></i>
+		</a>
+		<a rel="noopener noreferrer" class="btn zhihu js-tip" href="https://www.zhihu.com/people/joeat1"  data-toggle="tooltip" title="知乎: 苏暮雨">
+			<i class="fab fa-zhihu"></i>
+		</a>
 		<a rel="noopener noreferrer" class="btn github js-tip" href="https://github.com/joeat1"  data-toggle="tooltip" title="github: joeat1">
 			<i class="fab fa-github-alt"></i>
 		</a>
@@ -413,6 +413,7 @@
 			<p id="hitokototext" onclick="textforward()" style="font-family: KaiTi; font-size: 20px;">
 					珍惜每一天！
 			</p>
+			<p> 页面被浏览 <span id='hit-counts'></span> 次，当前访问城市：<span id='info-visitor'></span></p>
 		</div>
 	</footer>
 </body>
