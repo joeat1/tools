@@ -32,7 +32,6 @@ h2, h4, p {
 .wrap-mask{
     height:100%;
     width:100%;
-    /* background: rgba(125,125,125,.4); */
     background-image: radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), radial-gradient(rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 0.3) 166%);
 }
 
@@ -58,6 +57,7 @@ td {
 .layui-layer-tips{
     position:fixed !important;
 }
+@media (max-width: 768px){.layui-layer-tips{display: none;}}
 
 #t_fixed {
     position: fixed;
