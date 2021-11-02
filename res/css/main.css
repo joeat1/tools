@@ -1,13 +1,39 @@
 h2, h4, p {
     text-align: center;
+    color: white;
 }
 
-body {
-    /* background-image:url(https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/img/background.jpg); */
+/* .bg {
+    width: 100%;
+    background-image:url(https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/img/background.jpg);
     background-image:url(https://bing.ioliu.cn/v1/rand);
     background-size:cover;
     background-repeat:no-repeat;
     background-attachment:fixed
+} */
+.bg{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    min-width: 1000px;
+    z-index:-10;
+    zoom: 1;
+    background: url(https://bing.ioliu.cn/v1/rand);
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+    background-attachment:fixed;
+    /* opacity: 0.7; */
+}
+.wrap-mask{
+    height:100%;
+    width:100%;
+    /* background: rgba(125,125,125,.4); */
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), radial-gradient(rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 0.3) 166%);
 }
 
 td {
@@ -39,6 +65,7 @@ td {
     font-size: 18px;
     text-align: center;
     line-height: 36px;
+    background-color: #ffffffa1;
 }
 
 #t_fixed a.btn {

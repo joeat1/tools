@@ -1,25 +1,44 @@
 <html>
 <head>
     <title>二维码生成</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <link rel="stylesheet" href="../res/css/bootstrap.min.css">
-    <script type="text/javascript" src="../res/js/jquery.min.js"></script>
+    <meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!-- 移动端显示优化 -->
+	<meta name="author" content="joeat1">
+	<meta name="keywords" content="工具集, joeat1, tools">
+	<meta name="description" content="工具集">
+	<meta name="referrer" content="default"> <!-- 定义请求头部 Referrer -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- <base href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/" target="_blank">   -->
+	<!-- <base target="_blank"> -->
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/favicon.ico">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/js/layer.js"></script>
     <script type="text/javascript" src="../res/js/qrcode.min.js"></script>
-    <style>
-		h2, h4, p {
-			text-align: center;
-		}
-		
-		body {
-			background-image:url(../res/img/background.jpg);
-			background-size:cover;
-			background-repeat:no-repeat;
-			background-attachment:fixed
-		}
-    </style>
+    
+    
+    <!-- <script type="text/javascript" src="../res/js/main.js"></script> -->
+	<link rel="stylesheet" href="../res/css/main.css">
+	<link rel="stylesheet" href="../res/css/all.css">
+    <script>
+        // 保存按钮点击事件方法
+        function saveImg(){
+            var canvas = document.querySelector("#qrcode > canvas");
+            url = canvas.toDataURL("image/png"); //生成下载的url
+            var a = document.createElement("a");
+            a.setAttribute("href",url)
+            a.setAttribute("download", "qrcode.png")  // 把url放到我们的a标签中，并得到a标签对象
+            a.click(); //模拟点击一下a标签，即可下载啦！
+        }
+    </script>
+
 </head>
 <body>
+    <div class='bg' style='background-image: url(https://cdn.jsdelivr.net/gh/joeat1/tools@master/res/img/background.jpg);'><div class="wrap-mask"></div></div>
     <nav class="navbar navbar-expand-md navbar-dark">
 		<a class="navbar-brand" href="#">小工具</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -43,34 +62,34 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <input type="text" class="form-control" value="joeat1" id="qr_text" maxlength="100" autocomplete="off">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" style="font-size:medium" onclick="makeCode()">生成</button>  
+                <div class="input-group input-group-lg">
+                    <input type="text" class="form-control" value="joeat1" id="qr_text" maxlength="100" autocomplete="off">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" style="font-size:medium" onclick="makeCode()">生成</button>
+                        <button class="btn btn-primary" style="font-size:medium" onclick="saveImg()">下载</button>
+                    </div>
                 </div>
-                <div id="qrcode" style="margin-top:15px;"></div>
+            </div>
+            <div class="col-md-8 offset-md-2">
+                <div id="qrcode" style="margin-top:20px; text-align:-webkit-center"></div>
             </div>
         </div>
     </div>
     <script type="text/javascript">
         var qrcode = new QRCode(document.getElementById("qrcode"), {
-            width : 100,
-            height : 100
+            width : 150,
+            height : 150
         });
-
         function makeCode () {		
             var elText = document.getElementById("qr_text");
-            
             if (!elText.value) {
                 alert("请输入文字");
                 elText.focus();
                 return;
             }
-            
             qrcode.makeCode(elText.value);
         }
-
         makeCode();
-
         $("#qr_text").
             on("blur", function () { //离开输入框
                 makeCode();
