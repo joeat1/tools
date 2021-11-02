@@ -55,18 +55,27 @@ td {
     color: black;
 }
 
+.layui-layer-tips{
+    position:fixed !important;
+}
+
 #t_fixed {
     position: fixed;
     right: 10px;
-    /*bottom: -85px;*/
     bottom: 10px;
     transition: bottom ease .3s;
     z-index: 3;
     font-size: 18px;
     text-align: center;
     line-height: 36px;
-    background-color: #ffffffa1;
+    background-color: #ffffffd9;
 }
+@media (max-width: 768px){#t_fixed{display: none;}}
+
+#jk-div{
+    width: 12%;
+}
+@media (max-width: 768px){#jk-div{width: 28%;}}
 
 #t_fixed a.btn {
     width: 36px;
