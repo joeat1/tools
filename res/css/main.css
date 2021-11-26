@@ -140,9 +140,14 @@ td {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(82, 168, 236, .6)
   }
 
+  /* .logos_lists dl dt {
+    width: 125px;
+    height: 125px;
+  } */
   .logos_lists dl dt img {
-    width: 108px
+    width: 125px;
   }
+  @media (max-width: 768px){.logos_lists dl dt img{width: 108px;}}
 
   .logos_lists dl dd {
     display: none;
